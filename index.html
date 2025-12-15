@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espazie - Members Area</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- LOGIN VIEW -->
+    <section id="login-view" class="view active">
+        <div class="login-container glass-panel">
+            <div class="brand-header">
+                <!-- Replaced Icon/Text with Logo Image -->
+                <img src="logo.png" alt="Espazie Logo" class="brand-logo-img">
+                <p>MEMBER ACCESS</p>
+            </div>
+
+            <form id="login-form">
+                <div class="input-group">
+                    <label for="email">Email Address</label>
+                    <div class="input-wrapper">
+                        <i data-lucide="mail" class="input-icon"></i>
+                        <input type="email" id="email" placeholder="you@email.com" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-primary">
+                    <span>Enter Now</span>
+                    <i data-lucide="arrow-right"></i>
+                </button>
+            </form>
+
+            <p class="login-footer">Need help? <a href="#">Contact Support</a></p>
+        </div>
+    </section>
+
+    <!-- DASHBOARD VIEW -->
+    <section id="dashboard-view" class="view hidden">
+        <aside class="sidebar glass-panel">
+            <div class="sidebar-header">
+                <!-- Replaced Sidebar Icon/Text with Logo Image -->
+                <img src="logo.png" alt="Espazie Logo" class="sidebar-logo-img">
+            </div>
+
+            <nav class="sidebar-nav">
+                <button class="nav-item active" data-tab="how-to-use">
+                    <i data-lucide="play-circle"></i>
+                    <span>How to Use</span>
+                </button>
+                <button class="nav-item" data-tab="best-practices">
+                    <i data-lucide="star"></i>
+                    <span>Best Practices</span>
+                </button>
+                <button class="nav-item" data-tab="maintenance">
+                    <i data-lucide="settings"></i>
+                    <span>Maintenance</span>
+                </button>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button id="logout-btn" class="nav-item logout">
+                    <i data-lucide="log-out"></i>
+                    <span>Logout</span>
+                </button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-bar glass-panel">
+                <h2>Welcome, Member</h2>
+                <div class="user-profile">
+                    <span class="user-badge">VIP</span>
+                    <div class="avatar">U</div>
+                </div>
+            </header>
+
+            <div class="content-area">
+
+                <!-- TAB: HOW TO USE -->
+                <div id="how-to-use" class="tab-content active">
+                    <div class="hero-card glass-panel">
+                        <div class="hero-text">
+                            <h1>Master Your Impact Wrench</h1>
+                            <p>Complete step-by-step guide to extract maximum performance from your new Espazie tool.
+                            </p>
+                        </div>
+                        <div class="hero-decoration"></div>
+                    </div>
+
+                    <div class="grid-container">
+                        <div id="unboxing-card" class="card glass-panel clickable-card">
+                            <div class="card-icon"><i data-lucide="package-open"></i></div>
+                            <h3>1. Unboxing</h3>
+                            <p>Click to watch the full unboxing and setup video guide.</p>
+                        </div>
+                        <div id="first-charge-card" class="card glass-panel clickable-card">
+                            <div class="card-icon"><i data-lucide="battery-charging"></i></div>
+                            <h3>2. First Charge</h3>
+                            <p>Click for instructions on how to effectively charge your battery.</p>
+                        </div>
+                        <div id="torque-adjustment-card" class="card glass-panel clickable-card">
+                            <div class="card-icon"><i data-lucide="zap"></i></div>
+                            <h3>3. Torque Adjustment</h3>
+                            <p>Click for guidelines on setting the proper torque for each task.</p>
+                        </div>
+                        <div id="how-to-use-card" class="card glass-panel clickable-card">
+                            <div class="card-icon"><i data-lucide="play-square"></i></div>
+                            <h3>4. Using the Impact Wrench</h3>
+                            <p>Set of Videos on How to Use the Impact Wrench.</p>
+                        </div>
+                    </div>
+
+                    <!-- DETAILED VIEW: UNBOXING -->
+                    <div id="unboxing-video-view" class="hidden">
+                        <button id="back-to-dashboard" class="btn-secondary">
+                            <i data-lucide="arrow-left"></i> Back to Guide
+                        </button>
+
+                        <div class="video-container-full glass-panel">
+                            <h2>Impact Wrench Unboxing Instructions</h2>
+
+                            <!-- CENTERED TEXT INSTRUCTIONS -->
+                            <div class="instruction-text">
+                                <p style="font-size: 1.1rem; color: white;">When your impact wrench arrives, follow this
+                                    step-by-step guide to ensure everything is correct and ready for use.</p>
+
+                                <button class="btn-watch" data-video-src="https://www.youtube.com/embed/uVnMqD8BnJc">
+                                    <i data-lucide="play-circle"></i> Watch Video
+                                </button>
+
+                                <h3>1. Check the condition of the packaging</h3>
+                                <p>Before opening, make sure the box has no tears, deep dents, or signs of tampering.
+                                    This helps confirm the product arrived safely.</p>
+
+                                <h3>2. Open the box carefully</h3>
+                                <p>Use scissors or a utility knife with caution so you don’t damage any items inside.
+                                    Open the box from the sides while keeping it in a horizontal position.</p>
+
+                                <h3>3. Gently remove all contents</h3>
+                                <p>Inside the box, you will find:</p>
+                                <ul>
+                                    <li>The impact wrench</li>
+                                    <li>Battery or power source, depending on the model</li>
+                                    <li>Charger</li>
+                                    <li>Carrying case or storage box (if included)</li>
+                                    <li>Instruction manual</li>
+                                    <li>Additional accessories such as bits, sockets, or adapters</li>
+                                </ul>
+                                <p>Place everything on a flat surface to make inspection easier.</p>
+
+                                <h3>4. Confirm that all items are included</h3>
+                                <p>Compare what came in the box with the official list in the manual. If anything is
+                                    missing, contact support immediately.</p>
+
+                                <h3>5. Perform a quick visual inspection</h3>
+                                <p>Check the tool for scratches, loose parts, or any visible damage. Also ensure the
+                                    battery is intact.</p>
+
+                                <h3>6. Read the manual before first use</h3>
+                                <p>Even if you already have experience with similar tools, read the manual carefully to
+                                    understand the functions, operating modes, and safety guidelines.</p>
+
+                                <h3>7. Prepare the tool for its first use</h3>
+                                <p>If your model uses a battery, charge it fully before using the tool for the first
+                                    time. This helps extend the battery’s long-term lifespan.</p>
+
+                                <h3>8. Keep the original packaging</h3>
+                                <p>It is recommended to keep the box and internal materials, at least during the
+                                    warranty period. This helps with returns or exchanges if needed.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DETAILED VIEW: FIRST CHARGE -->
+                    <div id="first-charge-view" class="hidden">
+                        <button id="back-from-charge" class="btn-secondary">
+                            <i data-lucide="arrow-left"></i> Back to Guide
+                        </button>
+
+                        <div class="video-container-full glass-panel">
+                            <h2>First Battery Charge Instructions</h2>
+
+                            <div class="instruction-text">
+                                <p style="font-size: 1.1rem; color: white;">Performing the first charge correctly is one
+                                    of the most important steps to ensure that your lithium battery delivers maximum
+                                    performance.</p>
+
+                                <button class="btn-watch" data-video-src="https://www.youtube.com/embed/DSbMtZ9ZYaU">
+                                    <i data-lucide="play-circle"></i> Watch Video
+                                </button>
+
+                                <h3>1. Remove the battery from the tool</h3>
+                                <p>Press the release buttons firmly and slide the battery out. Charging the battery
+                                    outside the tool prevents accidental activation and ensures proper temperature
+                                    control during the process.</p>
+
+                                <h3>2. Use only the original charger included in your kit</h3>
+                                <p>Each charger is designed to deliver the correct voltage and current for its specific
+                                    battery model. Using incompatible chargers can overload the cells, cause
+                                    overheating, or drastically reduce battery life.</p>
+
+                                <h3>3. Charge the battery fully before using the tool for the first time</h3>
+                                <p>Connect the battery to the charger until the indicator light displays a full charge.
+                                    A complete first charge helps the internal management system calibrate and ensures
+                                    the battery reaches its intended storage and working capacity.</p>
+
+                                <h3>4. Do not interrupt the first charge cycle</h3>
+                                <p>Avoid removing the battery before the initial charge is complete. Interrupting the
+                                    first cycle may lead to inaccurate calibration and reduce the battery’s ability to
+                                    hold charge over time.</p>
+
+                                <h3>5. Allow the battery to rest before use</h3>
+                                <p>After removing it from the charger, let the battery sit for approximately 5 minutes.
+                                    This resting period allows the internal cells to stabilize their temperature and
+                                    voltage before being placed under load.</p>
+
+                                <h3>Essential Guidelines to Maximize Lithium Battery Lifespan</h3>
+                                <p>Lithium batteries are highly efficient and durable when used correctly. Following the
+                                    recommendations below will significantly extend their operating life and protect
+                                    their charging capacity.</p>
+
+                                <h3>1. Avoid deep discharges whenever possible</h3>
+                                <p>Lithium batteries do not need to be drained completely. Allowing the charge to drop
+                                    below 20 percent repeatedly increases internal stress and accelerates aging of the
+                                    cells.</p>
+
+                                <h3>2. Do not leave the battery charging for long periods after it reaches 100 percent
+                                </h3>
+                                <p>Although lithium batteries have internal protection circuits, prolonged overcharging
+                                    generates unnecessary heat, which gradually degrades the cells.</p>
+
+                                <h3>3. Store the battery under the right conditions</h3>
+                                <p>If you plan to store the battery for several weeks or months:</p>
+                                <ul>
+                                    <li>Keep it between 40 and 60 percent charge.</li>
+                                    <li>Store it in a cool, dry environment.</li>
+                                    <li>Avoid any temperature above 35°C or below 0°C.</li>
+                                </ul>
+                                <p>Extreme temperatures are one of the main causes of premature battery deterioration.
+                                </p>
+
+                                <h3>4. Use the battery regularly</h3>
+                                <p>Lithium batteries benefit from periodic use. If the tool stays unused, the battery
+                                    may enter deep sleep mode, reducing its responsiveness. Running the tool briefly
+                                    every few weeks helps keep the cells active.</p>
+
+                                <h3>5. Keep battery contacts clean and free of debris</h3>
+                                <p>Use a dry cloth to clean the metal contacts occasionally. Dust, grease, or oxidation
+                                    can interfere with energy transfer and slow down charging.</p>
+
+                                <h3>6. Allow the battery to cool before charging</h3>
+                                <p>Charging a hot battery causes chemical stress and increases internal resistance,
+                                    reducing the number of usable cycles. If the battery warms up during use, let it
+                                    cool to room temperature before attaching it to the charger.</p>
+
+                                <h3>7. Protect the battery from moisture and impacts</h3>
+                                <p>Water, oil, or cleaning products can damage the internal circuit board and
+                                    permanently affect battery safety. Also avoid drops or strong impacts, as lithium
+                                    cells are sensitive to deformation.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DETAILED VIEW: TORQUE ADJUSTMENT -->
+                    <div id="torque-adjustment-view" class="hidden">
+                        <button id="back-from-torque" class="btn-secondary">
+                            <i data-lucide="arrow-left"></i> Back to Guide
+                        </button>
+
+                        <div class="video-container-full glass-panel">
+                            <h2>Torque Adjustment Instructions</h2>
+
+                            <div class="instruction-text">
+                                <p style="font-size: 1.1rem; color: white;">Correct torque adjustment is essential to
+                                    ensure safety, avoid damage to components, and improve the tool’s performance.</p>
+
+                                <button class="btn-watch" data-video-src="https://www.youtube.com/embed/9Ydb0X_T0OE">
+                                    <i data-lucide="play-circle"></i> Watch Video
+                                </button>
+
+                                <h3>1. Identify the torque control system of your impact wrench</h3>
+                                <p>Most models offer:</p>
+                                <ul>
+                                    <li>Multiple speed levels</li>
+                                    <li>Torque presets</li>
+                                    <li>Variable trigger pressure for fine control</li>
+                                </ul>
+                                <p>Understanding these settings will help you adjust the tool accurately.</p>
+
+                                <h3>2. Choose the correct torque level for your task</h3>
+                                <p><strong>Low torque:</strong> ideal for small screws, delicate materials, and assembly
+                                    work where precision is important.</p>
+                                <p><strong>Medium torque:</strong> recommended for automotive tasks, household repairs,
+                                    and general fastening.</p>
+                                <p><strong>High torque:</strong> used for heavy-duty applications such as loosening
+                                    tight bolts, construction work, and rusted or seized fasteners.</p>
+
+                                <h3>3. Start with a lower torque setting</h3>
+                                <p>When working on unfamiliar materials or hardware, begin at the lowest power level.
+                                    Gradually increase until the screw or bolt is tightened securely without
+                                    over-tightening.</p>
+
+                                <h3>4. Avoid excessive torque</h3>
+                                <p>Applying too much torque can damage threads, crack components, or make future removal
+                                    difficult. Use proper socket sizes and always keep the tool aligned with the
+                                    fastener to prevent slipping.</p>
+
+                                <h3>5. Test torque on a sample piece when possible</h3>
+                                <p>If you are working on sensitive materials or new parts, test the torque setting on a
+                                    spare piece before applying it to the final job.</p>
+
+                                <h3>How to Set the Correct Power Supply for Different Types of Work</h3>
+
+                                <h3>1. Understand your tool’s power system</h3>
+                                <p>Depending on the model, your impact wrench may operate on lithium-ion battery packs
+                                    or external power adapters. Most modern impact wrenches rely on rechargeable
+                                    batteries, so proper battery management is essential.</p>
+
+                                <h3>2. For small or medium tasks, use a partially charged battery</h3>
+                                <p>For light work such as furniture assembly or general home use, a battery between 50%
+                                    and 80% is sufficient. This helps preserve long-term battery health while still
+                                    delivering consistent performance.</p>
+
+                                <h3>3. For heavy-duty jobs, ensure a fully charged battery</h3>
+                                <p>Tasks like removing wheel nuts, working on machinery, or loosening rusted bolts
+                                    require maximum power output. Always start with a fully charged battery for these
+                                    situations to avoid power drops during operation.</p>
+
+                                <h3>4. Avoid using the tool when the battery is below 20%</h3>
+                                <p>Low voltage reduces torque, causes the tool to strain, and accelerates battery wear.
+                                    Recharge once the battery reaches approximately 20–30%.</p>
+
+                                <h3>5. Use the correct charger and allow full charge cycles</h3>
+                                <p>The original charger provides the exact voltage and current your battery requires.
+                                    Using third-party chargers may lead to overheating, inconsistent power delivery, or
+                                    long-term damage.</p>
+
+                                <h3>6. Keep a spare battery for uninterrupted work</h3>
+                                <p>If you frequently work on heavy jobs or long projects, having a second battery
+                                    ensures continuous power. Alternate between batteries to maintain healthy charge
+                                    cycles.</p>
+
+                                <h3>7. Store batteries properly when not in use</h3>
+                                <p>Keep the battery between 40% and 60% charge, away from heat, moisture, or direct
+                                    sunlight. Correct storage guarantees safer and more efficient operation during
+                                    future tasks.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DETAILED VIEW: HOW TO USE (VIDEO GALLERY) -->
+                    <div id="how-to-use-view" class="hidden">
+                        <button id="back-from-how-to-use" class="btn-secondary">
+                            <i data-lucide="arrow-left"></i> Back to Guide
+                        </button>
+
+                        <div class="video-container-full glass-panel">
+                            <h2>How to Properly Use Your Impact Wrench</h2>
+
+                            <div class="instruction-text">
+                                <p style="font-size: 1.1rem; color: white;">Using your impact wrench correctly ensures
+                                    maximum performance, safety, and durability. Follow this step-by-step guide to
+                                    operate the tool efficiently, and refer to the recommended videos provided below for
+                                    visual demonstrations.</p>
+
+                                <h3>1. Understand the Basic Controls</h3>
+                                <p>Before using the tool, familiarize yourself with:</p>
+                                <ul>
+                                    <li>The trigger</li>
+                                    <li>Forward and reverse switch</li>
+                                    <li>Speed and torque controls</li>
+                                    <li>Battery release button</li>
+                                    <li>Socket connection system</li>
+                                </ul>
+                                <p>Knowing these controls makes operation smoother and prevents misuse.</p>
+
+                                <h3>2. Choose the Correct Socket Size</h3>
+                                <p>Always select a socket that fits tightly onto the bolt or nut. Loose-fitting sockets
+                                    can cause slipping, rounding of bolts, or accidents. Make sure the socket is
+                                    properly locked onto the tool before starting.</p>
+
+                                <h3>3. Set the Direction of Rotation</h3>
+                                <p>Use the forward/reverse switch to choose:</p>
+                                <ul>
+                                    <li>Forward (tightening)</li>
+                                    <li>Reverse (loosening)</li>
+                                </ul>
+                                <p>Always check the direction before pulling the trigger.</p>
+
+                                <h3>4. Adjust Speed and Torque Levels</h3>
+                                <p>Your impact wrench may offer multiple modes or speed settings. Use them as follows:
+                                </p>
+                                <ul>
+                                    <li><strong>Low speed / low torque:</strong> Furniture, small screws, delicate
+                                        materials</li>
+                                    <li><strong>Medium speed:</strong> Automotive tasks, general household repairs</li>
+                                    <li><strong>High speed / high torque:</strong> Wheel nuts, construction bolts,
+                                        rusted or tight fasteners</li>
+                                </ul>
+                                <p>Start with a lower setting and increase only if necessary. Overtightening can damage
+                                    threads or components.</p>
+
+                                <h3>5. Proper Grip and Positioning</h3>
+                                <p>Hold the tool firmly with both hands when possible. Keep your wrist aligned with the
+                                    bolt to prevent slipping. Position the socket straight onto the fastener to ensure
+                                    efficient torque transfer.</p>
+
+                                <h3>6. Use Short Controlled Bursts</h3>
+                                <p>Instead of holding the trigger continuously, apply short bursts: This gives you
+                                    better control and prevents overtightening.</p>
+
+                                <h3>7. Remove the Fastener Carefully</h3>
+                                <p>When loosening bolts, keep the tool aligned. As soon as the fastener is free, release
+                                    the trigger to avoid spinning it out unexpectedly.</p>
+
+                                <h3>8. Check Bolt Tightness with a Torque Wrench (Optional)</h3>
+                                <p>For critical applications such as:</p>
+                                <ul>
+                                    <li>Car wheels</li>
+                                    <li>Machinery</li>
+                                    <li>Structural components</li>
+                                </ul>
+                                <p>Always finish tightening with a manual torque wrench. Impact wrenches provide power,
+                                    but torque wrenches provide precision.</p>
+
+                                <h3>9. Battery Management While Using the Tool</h3>
+                                <ul>
+                                    <li>Start heavy-duty tasks with a fully charged battery</li>
+                                    <li>Avoid using the tool below 20% charge</li>
+                                    <li>Switch batteries when you notice reduced performance</li>
+                                    <li>Allow the battery to cool before recharging</li>
+                                </ul>
+                            </div>
+
+                            <h3 style="margin-top: 3rem; margin-bottom: 1.5rem; color: var(--accent-color);">Video
+                                Tutorials</h3>
+                            <div class="grid-container"
+                                style="grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 1rem;">
+                                <!-- Video 1 -->
+                                <div class="card glass-panel" style="padding: 1.5rem; min-height: auto;">
+                                    <div style="font-size: 1rem; font-weight: 600; color: white; margin-bottom: 1rem;">
+                                        Usage Demonstration 1</div>
+                                    <button class="btn-watch"
+                                        style="margin: 0; padding: 0.8rem 1.2rem; font-size: 0.9rem; width: 100%; justify-content: center;"
+                                        data-video-src="https://www.youtube.com/embed/Zb-vjJMkEQ4">
+                                        <i data-lucide="play-circle"></i> Watch Video
+                                    </button>
+                                </div>
+                                <!-- Video 2 -->
+                                <div class="card glass-panel" style="padding: 1.5rem; min-height: auto;">
+                                    <div style="font-size: 1rem; font-weight: 600; color: white; margin-bottom: 1rem;">
+                                        Usage Demonstration 2</div>
+                                    <button class="btn-watch"
+                                        style="margin: 0; padding: 0.8rem 1.2rem; font-size: 0.9rem; width: 100%; justify-content: center;"
+                                        data-video-src="https://www.youtube.com/embed/RdRNI8Xdvoo">
+                                        <i data-lucide="play-circle"></i> Watch Video
+                                    </button>
+                                </div>
+                                <!-- Video 3 -->
+                                <div class="card glass-panel" style="padding: 1.5rem; min-height: auto;">
+                                    <div style="font-size: 1rem; font-weight: 600; color: white; margin-bottom: 1rem;">
+                                        Usage Demonstration 3</div>
+                                    <button class="btn-watch"
+                                        style="margin: 0; padding: 0.8rem 1.2rem; font-size: 0.9rem; width: 100%; justify-content: center;"
+                                        data-video-src="https://www.youtube.com/embed/3aeGjeHe_Gc">
+                                        <i data-lucide="play-circle"></i> Watch Video
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- GENERIC VIDEO MODAL -->
+                    <div id="video-modal" class="modal-overlay">
+                        <div class="modal-content">
+                            <button id="close-modal" class="close-modal">
+                                <i data-lucide="x"></i>
+                            </button>
+                            <div class="video-responsive" style="margin-top: 0; border: none;">
+                                <iframe id="modal-iframe" width="560" height="315" src=""
+                                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
+                                    frameborder="0"></iframe>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            </div>
+            </div>
+
+            <!-- TAB: BEST PRACTICES -->
+            <div id="best-practices" class="tab-content hidden">
+                <h2 class="section-title">Best Ways to Use</h2>
+                <div class="list-card" id="best-practices-list">
+                    <div id="correct-positioning-card" class="list-item clickable-card">
+                        <i data-lucide="check-circle" class="success-icon"></i>
+                        <div>
+                            <h4>Correct Positioning</h4>
+                            <p>Always keep the tool at a 90-degree angle relative to the bolt/screw. Click for details.
+                            </p>
+                        </div>
+                    </div>
+                    <div id="work-cycles-card" class="list-item clickable-card">
+                        <i data-lucide="check-circle" class="success-icon"></i>
+                        <div>
+                            <h4>Work Cycles</h4>
+                            <p>Let the tool rest for 2 minutes after every 15 minutes of continuous intense use. Click
+                                for details.</p>
+                        </div>
+                    </div>
+                    <div id="lubrication-card" class="list-item clickable-card">
+                        <i data-lucide="check-circle" class="success-icon"></i>
+                        <div>
+                            <h4>Lubrication</h4>
+                            <p>Check the O-ring and lightly lubricate the anvil tip weekly. Click for details.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DETAILED VIEW: CORRECT POSITIONING -->
+            <div id="correct-positioning-view" class="hidden">
+                <button id="back-from-positioning" class="btn-secondary">
+                    <i data-lucide="arrow-left"></i> Back to Best Practices
+                </button>
+
+                <div class="video-container-full glass-panel">
+                    <h2>Correct Positioning for Using Your Impact Wrench</h2>
+
+                    <div class="instruction-text">
+                        <h3>1. Maintain a stable stance</h3>
+                        <p>Stand with your feet shoulder-width apart to keep balance and prevent unwanted movement while
+                            operating the tool.</p>
+
+                        <h3>2. Hold the tool firmly</h3>
+                        <p>Use a steady, comfortable grip on the handle. Keep your wrist straight to avoid strain and to
+                            improve control of the impact wrench.</p>
+
+                        <h3>3. Align the tool with the fastener</h3>
+                        <p>Position the socket perfectly straight over the bolt or nut. Proper alignment ensures full
+                            torque transfer and reduces the risk of slipping or damaging the fastener.</p>
+
+                        <h3>4. Support with the other hand when needed</h3>
+                        <p>For high-torque tasks or tight spaces, use your free hand to stabilize the front of the tool
+                            for better precision and control.</p>
+
+                        <h3>5. Let the tool do the work</h3>
+                        <p>Avoid applying sideways pressure or forcing the tool forward. Simply hold it in place and
+                            allow the impact mechanism to deliver the necessary power.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DETAILED VIEW: WORK CYCLES -->
+            <div id="work-cycles-view" class="hidden">
+                <button id="back-from-work-cycles" class="btn-secondary">
+                    <i data-lucide="arrow-left"></i> Back to Best Practices
+                </button>
+
+                <div class="video-container-full glass-panel">
+                    <h2>Work Cycles, Pause Time, and Usage Limits</h2>
+
+                    <div class="instruction-text">
+                        <h3>1. Understand the tool’s work cycle</h3>
+                        <p>Impact wrenches are designed to operate in short, controlled bursts rather than continuous
+                            use. A typical work cycle involves applying torque for a few seconds, followed by a brief
+                            rest period. This prevents overheating and ensures consistent performance.</p>
+
+                        <h3>2. Avoid prolonged continuous operation</h3>
+                        <p>Using the tool nonstop for long periods can cause excess heat in the motor, gearbox, and
+                            battery. Always limit each operation to short intervals, especially when working with high
+                            torque loads or stubborn fasteners.</p>
+
+                        <h3>3. Allow proper cooling time</h3>
+                        <p>If the tool becomes warm during use, pause for several minutes to let it cool down naturally.
+                            Forced cooling (like placing it near fans or in cold environments) is not recommended, as
+                            rapid temperature changes may affect internal components.</p>
+
+                        <h3>4. Monitor battery temperature</h3>
+                        <p>Lithium batteries can heat up during demanding tasks. If the battery becomes hot, remove it
+                            and allow it to cool before charging or reinstalling. Operating or charging a hot battery
+                            reduces its lifespan and may damage internal cells.</p>
+
+                        <h3>5. Respect usage limits for heavy-duty tasks</h3>
+                        <p>When working on jobs that require maximum power, such as loosening tight or rusted bolts, use
+                            the tool in short bursts. Overloading the tool by holding the trigger continuously can
+                            strain both the motor and impact mechanism.</p>
+
+                        <h3>6. Alternate tasks to prevent overheating</h3>
+                        <p>If performing multiple high-torque operations, switch between heavy and light tasks to allow
+                            the tool and battery to recover gradually.</p>
+
+                        <h3>7. Stop immediately if you notice performance drop</h3>
+                        <p>A sudden decrease in torque, unusual noise, or increased vibration may indicate overheating.
+                            Pause use and allow the tool to cool before continuing.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DETAILED VIEW: LUBRICATION -->
+            <div id="lubrication-view" class="hidden">
+                <button id="back-from-lubrication" class="btn-secondary">
+                    <i data-lucide="arrow-left"></i> Back to Best Practices
+                </button>
+
+                <div class="video-container-full glass-panel">
+                    <h2>Maintenance: Lubrication & O-Ring Care</h2>
+
+                    <div class="instruction-text">
+                        <button class="btn-watch" data-video-src="https://www.youtube.com/watch?v=K3sPeWvcpas">
+                            <i data-lucide="play-circle"></i> Watch Video
+                        </button>
+
+                        <h3>Tool Lubrication: Importance, Frequency, and Proper Application</h3>
+                        <p>Proper lubrication is essential to keep your impact wrench running smoothly, extend its
+                            lifespan, and ensure consistent performance during demanding tasks. Internal components such
+                            as the hammer mechanism, bearings, and moving parts rely on adequate lubrication to reduce
+                            friction and prevent premature wear. Understanding how and when to lubricate your tool is an
+                            important part of maintaining its long-term reliability.</p>
+
+                        <h3>1. Why lubrication matters</h3>
+                        <p>The internal hammering system of an impact wrench generates high levels of force and rapid
+                            movement. Without proper lubrication, this friction increases significantly, which can lead
+                            to overheating, loss of power, and accelerated component wear. Regular lubrication keeps the
+                            parts moving freely and improves efficiency during operation.</p>
+
+                        <h3>2. Identify lubrication points</h3>
+                        <p>Most impact wrenches include designated areas where lubrication should be applied, such as
+                            the anvil, hammer mechanism, and sometimes the front housing. Always check your model’s
+                            manual to confirm the correct lubrication points and recommended grease type.</p>
+
+                        <h3>3. Use the correct lubricant</h3>
+                        <p>Impact wrenches require high-quality, high-temperature grease specifically designed for
+                            impact mechanisms. Using the wrong type of lubricant can break down under heavy loads or
+                            cause internal clogging. Avoid oils or lightweight greases unless explicitly recommended by
+                            the manufacturer.</p>
+
+                        <h3>4. How often to lubricate</h3>
+                        <p>Frequency depends on usage:</p>
+                        <ul>
+                            <li>Frequent or heavy-duty use: lubricate every few weeks or after large projects</li>
+                            <li>Moderate use: lubricate every 1–2 months</li>
+                            <li>Occasional use: lubricate every 3–6 months</li>
+                        </ul>
+                        <p>If the tool begins making unusual noises, feels rough during operation, or loses efficiency,
+                            lubrication may be needed sooner.</p>
+
+                        <h3>5. Steps for proper lubrication</h3>
+                        <ul>
+                            <li>Disconnect the tool from the battery before servicing</li>
+                            <li>Remove the front housing or access cover (if applicable)</li>
+                            <li>Clean dust or old grease from visible areas using a dry cloth</li>
+                            <li>Apply a small amount of recommended grease directly onto the moving parts</li>
+                            <li>Reassemble the tool securely before use</li>
+                        </ul>
+                        <p>Avoid over-lubricating, as excess grease can trap dust and reduce performance.</p>
+
+                        <h3>6. Keep the anvil lightly lubricated</h3>
+                        <p>The anvil—the square drive where sockets attach—experiences constant friction. Apply a small
+                            layer of grease occasionally to ensure smooth socket engagement and prevent rust.</p>
+
+                        <h3>7. Watch for signs of poor lubrication</h3>
+                        <ul>
+                            <li>Unusual grinding noises</li>
+                            <li>Reduced torque or slower performance</li>
+                            <li>Excessive heat during short work cycles</li>
+                            <li>Increased vibration</li>
+                        </ul>
+                        <p>If any of these signs appear, stop using the tool and inspect lubrication before continuing.
+                        </p>
+
+                        <h3>8. Store the tool properly after lubrication</h3>
+                        <p>After servicing, store the impact wrench in a dry environment to prevent grease
+                            contamination. Keeping dust and moisture away preserves both the internal mechanism and the
+                            lubrication itself.</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+            <!-- TAB: MAINTENANCE -->
+            <div id="maintenance" class="tab-content hidden">
+                <h2 class="section-title">Maintenance & Care</h2>
+                <div id="maintenance-grid" class="info-grid">
+                    <div class="info-card glass-panel warning">
+                        <h3><i data-lucide="alert-triangle"></i> Safety Tip</h3>
+                        <p>Always remove the battery before changing sockets or cleaning.</p>
+                    </div>
+                    <div id="external-cleaning-card" class="info-card glass-panel clickable-card">
+                        <h3>External Cleaning</h3>
+                        <p>Use only a dry or slightly damp cloth. Avoid harsh solvents. Click for details.</p>
+                    </div>
+                    <div id="storage-card" class="info-card glass-panel clickable-card">
+                        <h3>Storage</h3>
+                        <p>Store in a dry place away from direct sunlight. Click for details.</p>
+                    </div>
+                </div>
+
+                <!-- DETAILED VIEW: EXTERNAL CLEANING -->
+                <div id="external-cleaning-view" class="hidden">
+
+                    <button id="back-from-external-cleaning" class="btn-secondary">
+                        <i data-lucide="arrow-left"></i> Back to Maintenance
+                    </button>
+
+                    <div class="video-container-full glass-panel">
+                        <h2>External Cleaning of Your Impact Wrench</h2>
+                        <div class="instruction-text">
+                            <button class="btn-watch" data-video-src="https://www.youtube.com/embed/us1Z0qHPrQo">
+                                <i data-lucide="play-circle"></i> Watch Video
+                            </button>
+
+                            <p>Keeping the exterior of your impact wrench clean helps preserve its durability, prevents
+                                dust buildup, and ensures safer operation. Follow these steps to maintain the tool
+                                properly without damaging its components.</p>
+
+                            <h3>1. Disconnect the battery before cleaning</h3>
+                            <p>Always remove the battery to avoid accidental activation and protect the electronic
+                                components from moisture.</p>
+
+                            <h3>2. Use a dry or slightly damp cloth</h3>
+                            <p>Wipe the exterior of the tool with a dry cloth to remove dust and debris.</p>
+                            <p>If needed, use a lightly dampened cloth to clean stubborn dirt, but avoid excessive
+                                moisture.</p>
+
+                            <h3>3. Avoid harsh chemicals</h3>
+                            <p>Do not use solvents, alcohol, gasoline, or abrasive cleaners. These substances can damage
+                                the plastic housing, rubber grips, and protective coatings.</p>
+
+                            <h3>4. Use a soft brush for hard-to-reach areas</h3>
+                            <p>A small brush or soft paintbrush can help remove dust from vents, crevices, and around
+                                the anvil area.</p>
+                            <p>Keep ventilation openings free of debris to prevent overheating.</p>
+
+                            <h3>5. Clean the anvil area carefully</h3>
+                            <p>Wipe around the anvil and socket connection point to remove dust, grease buildup, or
+                                metal shavings.</p>
+                            <p>Do not insert liquids or sprays inside the tool.</p>
+
+                            <h3>6. Dry the tool completely before reassembly</h3>
+                            <p>Make sure no moisture remains on the surface before reinstalling the battery.</p>
+
+                            <h3>7. Store the tool in a clean, dry environment</h3>
+                            <p>After cleaning, place the impact wrench in its case or storage area to protect it from
+                                dust, humidity, and accidental impacts.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DETAILED VIEW: STORAGE -->
+                <div id="storage-view" class="hidden">
+                    <button id="back-from-storage" class="btn-secondary">
+                        <i data-lucide="arrow-left"></i> Back to Maintenance
+                    </button>
+
+                    <div class="video-container-full glass-panel">
+                        <h2>How to Properly Store Your Impact Wrench</h2>
+                        <div class="instruction-text">
+                            <p>Correct storage is essential to preserve the performance, safety, and durability of your
+                                impact wrench. Following these guidelines helps protect the tool and its battery from
+                                damage caused by moisture, dust, and improper handling.</p>
+
+                            <h3>1. Remove the battery before storage</h3>
+                            <p>Always detach the battery from the tool when storing it. This prevents accidental
+                                activation and protects the battery contacts.</p>
+
+                            <h3>2. Clean the tool before storing</h3>
+                            <p>Make sure the exterior is free of dust, grease, and debris. A clean tool is less likely
+                                to develop corrosion or long-term wear.</p>
+
+                            <h3>3. Store in a dry and ventilated place</h3>
+                            <p>Choose a location that is clean, dry, and away from moisture or direct sunlight. Excess
+                                humidity can damage internal components and electrical contacts.</p>
+
+                            <h3>4. Avoid extreme temperatures</h3>
+                            <p>Do not store the impact wrench in very hot or very cold environments. Extreme
+                                temperatures can affect both the tool’s internal components and battery lifespan.</p>
+
+                            <h3>5. Store the battery correctly</h3>
+                            <p>If the battery will not be used for an extended period, store it separately with a charge
+                                level between 40% and 60%. This helps maintain battery health and prevents capacity
+                                loss.</p>
+
+                            <h3>6. Use the original case or protective storage</h3>
+                            <p>Whenever possible, store the impact wrench in its original case or a protective box. This
+                                prevents dust accumulation and protects the tool from impacts.</p>
+
+                            <h3>7. Keep the tool away from heavy objects</h3>
+                            <p>Do not place heavy items on top of the tool or its case. Excess pressure may damage the
+                                housing or internal components.</p>
+
+                            <h3>8. Check the tool periodically</h3>
+                            <p>If the tool is stored for long periods, inspect it occasionally and briefly power it on
+                                to ensure proper operation.</p>
+
+                            <h3 style="margin-top: 2.5rem; color: var(--accent-color);">Impact Wrench Storage Checklist
+                            </h3>
+                            <ul style="list-style-type: none; padding: 0;">
+                                <li style="margin-bottom: 0.8rem; display: flex; align-items: flex-start; gap: 0.8rem;">
+                                    <i data-lucide="check-square"
+                                        style="color: var(--accent-color); flex-shrink: 0; margin-top: 3px;"></i>
+                                    <div><strong>Battery removed</strong><br><span
+                                            style="font-size: 0.9em; opacity: 0.8;">Ensure the battery is detached from
+                                            the tool before storage.</span></div>
+                                </li>
+                                <li style="margin-bottom: 0.8rem; display: flex; align-items: flex-start; gap: 0.8rem;">
+                                    <i data-lucide="check-square"
+                                        style="color: var(--accent-color); flex-shrink: 0; margin-top: 3px;"></i>
+                                    <div><strong>Tool cleaned</strong><br><span
+                                            style="font-size: 0.9em; opacity: 0.8;">Confirm the exterior is clean and
+                                            free from dust, grease, or debris.</span></div>
+                                </li>
+                                <li style="margin-bottom: 0.8rem; display: flex; align-items: flex-start; gap: 0.8rem;">
+                                    <i data-lucide="check-square"
+                                        style="color: var(--accent-color); flex-shrink: 0; margin-top: 3px;"></i>
+                                    <div><strong>Dry storage location</strong><br><span
+                                            style="font-size: 0.9em; opacity: 0.8;">Store the tool in a dry,
+                                            well-ventilated area, away from moisture.</span></div>
+                                </li>
+                                <li style="margin-bottom: 0.8rem; display: flex; align-items: flex-start; gap: 0.8rem;">
+                                    <i data-lucide="check-square"
+                                        style="color: var(--accent-color); flex-shrink: 0; margin-top: 3px;"></i>
+                                    <div><strong>Temperature controlled</strong><br><span
+                                            style="font-size: 0.9em; opacity: 0.8;">Avoid places with extreme heat or
+                                            cold that may damage the tool or battery.</span></div>
+                                </li>
+                                <li style="margin-bottom: 0.8rem; display: flex; align-items: flex-start; gap: 0.8rem;">
+                                    <i data-lucide="check-square"
+                                        style="color: var(--accent-color); flex-shrink: 0; margin-top: 3px;"></i>
+                                    <div><strong>Battery stored correctly</strong><br><span
+                                            style="font-size: 0.9em; opacity: 0.8;">If unused for long periods, keep the
+                                            battery at 40%–60% charge, stored separately.</span></div>
+                                </li>
+                                <li style="margin-bottom: 0.8rem; display: flex; align-items: flex-start; gap: 0.8rem;">
+                                    <i data-lucide="check-square"
+                                        style="color: var(--accent-color); flex-shrink: 0; margin-top: 3px;"></i>
+                                    <div><strong>Protective case used</strong><br><span
+                                            style="font-size: 0.9em; opacity: 0.8;">Place the impact wrench in its
+                                            original case or a protective box whenever possible.</span></div>
+                                </li>
+                                <li style="margin-bottom: 0.8rem; display: flex; align-items: flex-start; gap: 0.8rem;">
+                                    <i data-lucide="check-square"
+                                        style="color: var(--accent-color); flex-shrink: 0; margin-top: 3px;"></i>
+                                    <div><strong>No heavy objects on top</strong><br><span
+                                            style="font-size: 0.9em; opacity: 0.8;">Do not stack heavy items over the
+                                            tool or its case.</span></div>
+                                </li>
+                                <li style="margin-bottom: 0.8rem; display: flex; align-items: flex-start; gap: 0.8rem;">
+                                    <i data-lucide="check-square"
+                                        style="color: var(--accent-color); flex-shrink: 0; margin-top: 3px;"></i>
+                                    <div><strong>Periodic inspection</strong><br><span
+                                            style="font-size: 0.9em; opacity: 0.8;">If stored long-term, check the tool
+                                            occasionally to ensure everything remains in good condition.</span></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+        </main>
+    </section>
+
+    <script src="script.js"></script>
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
