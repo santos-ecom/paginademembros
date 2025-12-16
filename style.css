@@ -95,6 +95,38 @@ body {
     margin-bottom: 2.5rem;
 }
 
+/* View States */
+.view {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--background-color);
+    opacity: 1;
+    transition: opacity 0.5s ease, visibility 0.5s;
+    transition-behavior: allow-discrete;
+    /* Future proofing */
+    z-index: 1;
+    pointer-events: none;
+    overflow: hidden;
+
+    /* CRITICAL FOR LAYOUT: Ensure sidebar and main content sit side-by-side */
+    display: flex;
+}
+
+.view.hidden {
+    display: none !important;
+    opacity: 0;
+    pointer-events: none !important;
+}
+
+.view.active {
+    z-index: 100;
+    /* Active view always on top */
+    pointer-events: auto;
+    opacity: 1;
+}
+
 /* Logo Styles */
 .brand-logo-img {
     max-width: 180px;
@@ -102,29 +134,9 @@ body {
     margin-bottom: 0.5rem;
 }
 
-/* Global View Styles */
-.view {
-    width: 100%;
-    min-height: 100vh;
-    transition: opacity 0.5s ease-in-out;
-    opacity: 1;
-    position: relative;
-    /* Ensure z-index works */
-    z-index: 10;
-}
-
-.view.active {
-    z-index: 100;
-    /* Active view always on top */
-    pointer-events: auto;
-}
-
-.view.hidden {
-    display: none !important;
-    opacity: 0;
-    pointer-events: none !important;
-    /* Double safety */
-    z-index: -1;
+pointer-events: none !important;
+/* Double safety */
+z-index: -1;
 }
 
 /* MODULES SELECTION SCREEN */
