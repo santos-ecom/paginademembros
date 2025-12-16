@@ -808,11 +808,11 @@ body {
 
     .sidebar-logo-img.mobile-logo {
         display: block !important;
-        max-height: 45px;
-        height: auto;
-        max-width: 180px;
+        height: 40px;
         width: auto;
+        max-width: 180px;
         object-fit: contain;
+        flex-shrink: 0;
     }
 
     /* Hide sidebar text/footer items on mobile header */
