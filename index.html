@@ -15,7 +15,7 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="style.css?v=2.6">
+    <link rel="stylesheet" href="style.css?v=2.7">
 </head>
 
 <body>
@@ -45,6 +45,55 @@
             </form>
 
             <p class="login-footer">Need help? <a href="#">Contact Support</a></p>
+        </div>
+    </section>
+
+    <!-- MODULES SELECTION VIEW -->
+    <section id="modules-view" class="view hidden">
+        <div class="modules-container">
+            <!-- Header -->
+            <div class="modules-header">
+                <img src="espazie-logo.png" alt="Espazie Logo" class="brand-logo-small">
+                <h2>Select Your Learning Path</h2>
+                <p>Choose a module to start your journey</p>
+            </div>
+
+            <!-- Modules List -->
+            <div class="modules-grid">
+                <!-- Module 1: Impact Wrench (Current Dashboard) -->
+                <div class="module-card glass-panel" id="module-impact-wrench">
+                    <div class="module-icon">
+                        <i data-lucide="zap"></i>
+                    </div>
+                    <div class="module-content">
+                        <h3>Master Your Tool</h3>
+                        <p>Learn to Use the Tool You Acquired - Impact Wrench</p>
+                        <button class="btn-module">
+                            <span>Access Module</span>
+                            <i data-lucide="arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Module 2: Other Tools (Placeholder) -->
+                <div class="module-card glass-panel locked" id="module-other-tools">
+                    <div class="module-icon">
+                        <i data-lucide="wrench"></i>
+                    </div>
+                    <div class="module-content">
+                        <h3>Explore More</h3>
+                        <p>Learn to Use Other Varied Tools in the Same Niche</p>
+                        <button class="btn-module secondary">
+                            <span>Coming Soon</span>
+                            <i data-lucide="lock"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <button id="modules-logout-btn" class="text-btn">
+                <i data-lucide="log-out"></i> Logout
+            </button>
         </div>
     </section>
 
