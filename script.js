@@ -421,3 +421,9 @@ if (backFromStorageBtn && maintenanceGrid) {
         maintenanceGrid.classList.remove('hidden');
     });
 }
+
+// TOOL SELECTION
+window.selectTool = function (toolName) {
+    console.log(`Tool selected: ${toolName}`);
+    alert(`Módulo: ${toolName}\nConteúdo em breve!`);
+}
