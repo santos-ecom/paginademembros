@@ -132,31 +132,33 @@ window.openOtherToolsModule = function (event) {
 }
 
 // Helper to handle transitions to any view
+// Helper to handle transitions to any view
 function navigateToView(viewId) {
     const modulesView = document.getElementById('modules-view');
     const targetView = document.getElementById(viewId);
 
     console.log(`Navigating to ${viewId}`, { modulesView, targetView });
 
-    if (modulesView && targetView) {
-        modulesView.style.opacity = '0';
+    if (!targetView) {
+        alert("System Error: View not found (" + viewId + ")");
+        return;
+    }
+
+    if (modulesView) {
+        modulesView.classList.add('hidden');
         modulesView.classList.remove('active');
+        modulesView.style.opacity = '0';
+    }
 
-        setTimeout(() => {
-            modulesView.classList.add('hidden');
+    // Immediate show without timeout
+    targetView.classList.remove('hidden');
+    void targetView.offsetWidth; // Force reflow
+    targetView.classList.add('active');
+    targetView.style.opacity = '1';
 
-            targetView.classList.remove('hidden');
-            void targetView.offsetWidth; // Force reflow
-            targetView.classList.add('active');
-            targetView.style.opacity = '1';
-
-            // Special handling for dashboard tabs
-            if (viewId === 'dashboard-view' && typeof switchTab === 'function') {
-                switchTab('how-to-use');
-            }
-        }, 500);
-    } else {
-        console.error("View elements not found:", viewId);
+    // Special handling for dashboard tabs
+    if (viewId === 'dashboard-view' && typeof switchTab === 'function') {
+        switchTab('how-to-use');
     }
 }
 
