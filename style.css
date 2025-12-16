@@ -808,8 +808,9 @@ body {
 
     .sidebar-logo-img.mobile-logo {
         display: block !important;
-        max-height: 50px;
-        height: 50px;
+        max-height: 45px;
+        height: auto;
+        max-width: 180px;
         width: auto;
         object-fit: contain;
     }
