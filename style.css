@@ -107,7 +107,12 @@ body {
     height: auto;
 }
 
-.mobile-logo {
+/* Desktop: show desktop logo, hide mobile logo */
+.sidebar-logo-img.desktop-logo {
+    display: block;
+}
+
+.sidebar-logo-img.mobile-logo {
     display: none;
 }
 
@@ -763,14 +768,14 @@ body {
         align-items: center;
     }
 
+    /* Mobile: hide desktop logo, show mobile logo */
     .sidebar-logo-img.desktop-logo {
-        display: none;
+        display: none !important;
     }
 
     .sidebar-logo-img.mobile-logo {
-        display: block;
+        display: block !important;
         max-height: 40px;
-        /* Adjust size for mobile logo */
         width: auto;
     }
 
