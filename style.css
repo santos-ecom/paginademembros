@@ -116,6 +116,11 @@ body {
     display: none;
 }
 
+/* Mobile logout button - hidden on desktop */
+.mobile-logout-btn {
+    display: none;
+}
+
 .brand-header p {
     color: var(--accent-color);
     font-size: 0.8rem;
@@ -762,10 +767,36 @@ body {
     .sidebar-header {
         margin-bottom: 0;
         width: 100%;
-        justify-content: center;
-        /* Center logo on mobile */
+        justify-content: space-between;
         display: flex;
         align-items: center;
+        padding: 0 0.5rem;
+    }
+
+    /* Mobile logout button */
+    .mobile-logout-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: transparent;
+        border: 1px solid rgba(255, 77, 77, 0.3);
+        color: #ff4d4d;
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: var(--transition);
+        flex-shrink: 0;
+    }
+
+    .mobile-logout-btn:hover {
+        background: rgba(255, 77, 77, 0.1);
+        border-color: #ff4d4d;
+    }
+
+    .mobile-logout-btn i {
+        width: 20px;
+        height: 20px;
     }
 
     /* Mobile: hide desktop logo, show mobile logo */

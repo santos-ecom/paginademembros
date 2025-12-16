@@ -40,6 +40,18 @@ function performLogin() {
 }
 
 logoutBtn.addEventListener('click', () => {
+    performLogout();
+});
+
+// Mobile logout button
+const mobileLogoutBtn = document.getElementById('mobile-logout-btn');
+if (mobileLogoutBtn) {
+    mobileLogoutBtn.addEventListener('click', () => {
+        performLogout();
+    });
+}
+
+function performLogout() {
     // 1. Hide Dashboard
     dashboardView.classList.remove('active');
 
@@ -55,7 +67,7 @@ logoutBtn.addEventListener('click', () => {
         // Clear form
         loginForm.reset();
     }, 500);
-});
+}
 
 
 // --- Navigation Logic ---
