@@ -107,6 +107,10 @@ body {
     height: auto;
 }
 
+.mobile-logo {
+    display: none;
+}
+
 .brand-header p {
     color: var(--accent-color);
     font-size: 0.8rem;
@@ -753,10 +757,18 @@ body {
         width: 100%;
         justify-content: center;
         /* Center logo on mobile */
+        display: flex;
+        align-items: center;
     }
 
-    .sidebar-logo-img {
-        max-height: 32px;
+    .sidebar-logo-img.desktop-logo {
+        display: none;
+    }
+
+    .sidebar-logo-img.mobile-logo {
+        display: block;
+        max-height: 40px;
+        /* Adjust size for mobile logo */
         width: auto;
     }
 
