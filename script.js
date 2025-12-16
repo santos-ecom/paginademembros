@@ -33,54 +33,106 @@ function performLogin() {
 
         // Show Module Selection instead of Dashboard directly
         modulesView.classList.remove('hidden');
-        void modulesView.offsetWidth; // trigger reflow
-        modulesView.classList.add('active'); // CRTICAL: Enable pointer events
-        modulesView.style.opacity = '1';
-    }, 500);
-}
+        window.performLogin(e); // Call the global performLogin
+    }
+});
 
-// 3. LOGOUT - GLOBAL FUNCTION
+// GLOBAL LOGOUT FUNCTION
 window.performLogout = function () {
     console.log("Global Logout Triggered");
 
-    // Determine which view is active to hide it
-    const dashboardView = document.getElementById('dashboard-view');
-    const modulesView = document.getElementById('modules-view');
+    // Hide all views
+    const views = document.querySelectorAll('.view');
+    views.forEach(v => {
+        v.style.opacity = '0';
+        v.classList.remove('active');
+        setTimeout(() => v.classList.add('hidden'), 500);
+    });
+
+    // Show Login
     const loginView = document.getElementById('login-view');
     const loginForm = document.getElementById('login-form');
 
-    const activeView = (dashboardView && dashboardView.classList.contains('active')) ? dashboardView :
-        ((modulesView && !modulesView.classList.contains('hidden')) ? modulesView : null);
-
-    if (activeView) {
-        activeView.classList.remove('active');
-        activeView.style.opacity = '0';
-    }
-
-    setTimeout(() => {
-        if (activeView) activeView.classList.add('hidden');
-
-        // Ensure ALL private views are hidden
-        if (dashboardView) {
-            dashboardView.classList.add('hidden');
-            dashboardView.classList.remove('active');
-        }
-        if (modulesView) {
-            modulesView.classList.add('hidden');
-            modulesView.style.opacity = '0';
-        }
-
-        // Show Login
-        if (loginView) {
+    if (loginView) {
+        setTimeout(() => {
             loginView.classList.remove('hidden');
-            loginView.style.opacity = '';
             void loginView.offsetWidth;
             loginView.classList.add('active');
-        }
+            loginView.style.opacity = '1';
+        }, 500);
+    }
 
-        // Clear form
-        if (loginForm) loginForm.reset();
-    }, 500);
+    if (loginForm) loginForm.reset();
+}
+
+// GLOBAL MODULE NAVIGATION
+window.openImpactWrenchModule = function (event) {
+    if (event) event.stopPropagation();
+    console.log("Opening Impact Wrench");
+    navigateToView('dashboard-view');
+    // Optional: Reset tab to first one
+    if (typeof switchTab === 'function') switchTab('how-to-use');
+}
+
+window.openOtherToolsModule = function (event) {
+    if (event) event.stopPropagation();
+    console.log("Opening Other Tools");
+    navigateToView('other-tools-view');
+}
+
+// ROBUST NAVIGATION HELPER
+function navigateToView(targetId) {
+    console.log("Navigating to:", targetId);
+
+    // 1. Identify currently active view to hide it
+    const activeView = document.querySelector('.view.active');
+    const targetView = document.getElementById(targetId);
+
+    if (!targetView) {
+        console.error("Target view not found:", targetId);
+        return;
+    }
+
+    // 2. Hide current view
+    if (activeView) {
+        activeView.style.opacity = '0';
+        activeView.classList.remove('active');
+
+        setTimeout(() => {
+            activeView.classList.add('hidden');
+
+            // 3. Show target view (inside timeout to wait for fade out)
+            showTarget(targetView);
+        }, 500);
+    } else {
+        // No active view? Just show target immediately
+        showTarget(targetView);
+    }
+
+    function showTarget(el) {
+        el.classList.remove('hidden');
+        void el.offsetWidth; // Force reflow
+        el.classList.add('active');
+        el.style.opacity = '1';
+    }
+}
+
+// LOGIN FUNCTION
+window.performLogin = function (event) {
+    if (event) event.preventDefault();
+
+    const emailInput = document.getElementById('email');
+    const email = emailInput.value.trim().toLowerCase();
+
+    // Simple validation
+    if (!email || !email.includes('@')) {
+        alert('Please enter a valid email address.');
+        return;
+    }
+
+    console.log("Login successful for:", email);
+    // Redirect to MODULES view
+    navigateToView('modules-view');
 }
 
 // Bind Logout Buttons (Legacy listener + ensure global access)
@@ -100,7 +152,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const dashboardView = document.getElementById('dashboard-view');
 
     // 2. MODULE SELECTION RE-BIND
-    // Using global function for robustness (see below)
+    if (moduleImpactWrench) {
+        moduleImpactWrench.addEventListener('click', window.openImpactWrenchModule);
+    }
 
     if (moduleOtherTools) {
         moduleOtherTools.addEventListener('click', (e) => {
