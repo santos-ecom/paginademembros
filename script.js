@@ -19,21 +19,7 @@ loginForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const email = document.getElementById('email').value;
     if (email) {
-        performLogin();
-    }
-});
-
-function performLogin() {
-    // Hide Login
-    loginView.style.opacity = '0';
-
-    setTimeout(() => {
-        loginView.classList.remove('active');
-        loginView.classList.add('hidden');
-
-        // Show Module Selection instead of Dashboard directly
-        modulesView.classList.remove('hidden');
-        window.performLogin(e); // Call the global performLogin
+        window.performLogin(e);
     }
 });
 
@@ -132,6 +118,11 @@ window.performLogin = function (event) {
 
     console.log("Login successful for:", email);
     // Redirect to MODULES view
+    navigateToView('modules-view');
+}
+
+// BACK TO MODULES
+window.backToModules = function () {
     navigateToView('modules-view');
 }
 
