@@ -920,4 +920,10 @@ body {
         width: 95%;
         margin: 0 auto;
     }
+
+    /* Login container mobile spacing */
+    .login-container {
+        margin: 0 1.5rem;
+        max-width: calc(100% - 3rem);
+    }
 }
