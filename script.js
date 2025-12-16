@@ -38,81 +38,50 @@ function performLogin() {
     }, 500);
 }
 
-// 2. MODULE SELECTION
-if (moduleImpactWrench) {
-    moduleImpactWrench.addEventListener('click', () => {
-        // Go to Dashboard
-        modulesView.style.opacity = '0';
-        setTimeout(() => {
-            modulesView.classList.add('hidden');
-
-            dashboardView.classList.remove('hidden');
-            void dashboardView.offsetWidth;
-            dashboardView.classList.add('active');
-
-            // Reset to first tab
-            switchTab('how-to-use');
-        }, 500);
-    });
-}
-
-if (moduleOtherTools) {
-    moduleOtherTools.addEventListener('click', (e) => {
-        // Prevent action for now or show alert
-        e.stopPropagation(); // prevent any parent click issues
-        // Optional: alert('Content coming soon!');
-    });
-}
-
-// 3. LOGOUT
-function performLogout() {
-    // Determine which view is active to hide it
-    const activeView = dashboardView.classList.contains('active') ? dashboardView :
-        (!modulesView.classList.contains('hidden') ? modulesView : null);
-
-    if (activeView) {
-        activeView.classList.remove('active');
-        activeView.style.opacity = '0';
-    }
-
-    setTimeout(() => {
-        if (activeView) activeView.classList.add('hidden');
-
-        // Ensure ALL private views are hidden
-        dashboardView.classList.add('hidden');
-        dashboardView.classList.remove('active');
-        modulesView.classList.add('hidden');
-        modulesView.style.opacity = '0';
-
-        // Show Login
-        loginView.classList.remove('hidden');
-        loginView.style.opacity = '';
-        void loginView.offsetWidth;
-        loginView.classList.add('active');
-
-        // Clear form
-        loginForm.reset();
-    }, 500);
-}
-
-// Bind Logout Buttons
-if (logoutBtn) logoutBtn.addEventListener('click', performLogout);
-if (modulesLogoutBtn) modulesLogoutBtn.addEventListener('click', performLogout);
-
-// Mobile logout button
-const mobileLogoutBtn = document.getElementById('mobile-logout-btn');
-if (mobileLogoutBtn) {
-    mobileLogoutBtn.addEventListener('click', performLogout);
-}
-
-
 // --- Navigation Logic ---
 
-// Add click event to all sidebar nav items
-navItems.forEach(item => {
-    item.addEventListener('click', () => {
-        const targetTab = item.getAttribute('data-tab');
-        switchTab(targetTab);
+document.addEventListener('DOMContentLoaded', () => {
+    // Re-select elements inside ensure they exist
+    const moduleImpactWrench = document.getElementById('module-impact-wrench');
+    const moduleOtherTools = document.getElementById('module-other-tools');
+    const modulesView = document.getElementById('modules-view');
+    const dashboardView = document.getElementById('dashboard-view');
+
+    // 2. MODULE SELECTION RE-BIND
+    if (moduleImpactWrench) {
+        moduleImpactWrench.addEventListener('click', () => {
+            console.log("Module clicked!"); // Debug
+
+            // Go to Dashboard
+            modulesView.style.opacity = '0';
+            setTimeout(() => {
+                modulesView.classList.add('hidden');
+
+                dashboardView.classList.remove('hidden');
+                void dashboardView.offsetWidth;
+                dashboardView.classList.add('active');
+
+                // Reset to first tab
+                if (typeof switchTab === 'function') {
+                    switchTab('how-to-use');
+                }
+            }, 500);
+        });
+    }
+
+    if (moduleOtherTools) {
+        moduleOtherTools.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+    }
+
+    // Bind Sidebar Nav
+    const navItems = document.querySelectorAll('.nav-item[data-tab]');
+    navItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const targetTab = item.getAttribute('data-tab');
+            switchTab(targetTab);
+        });
     });
 });
 
