@@ -77,20 +77,18 @@
                     </div>
                 </div>
 
-                <!-- Module 2: Other Tools (Placeholder) -->
-                <div class="module-card glass-panel locked" id="module-other-tools"
-                    onclick="alert('This module is coming soon!')">
+                <!-- Module 2: Explore More (Unlocked) -->
+                <div class="module-card glass-panel" id="module-other-tools">
                     <div class="module-icon">
                         <i data-lucide="wrench"></i>
                     </div>
                     <div class="module-content">
                         <h3>Explore More</h3>
                         <p>Learn to Use Other Varied Tools in the Same Niche</p>
-                        <button class="btn-module secondary">
-                            <span>Coming Soon</span>
-                            <i data-lucide="lock"></i>
-                        </button>
                     </div>
+                    <button class="primary-btn pulse-anim" onclick="openOtherToolsModule()">
+                        Explore Tools <i data-lucide="arrow-right"></i>
+                    </button>
                 </div>
             </div>
 
@@ -1050,7 +1048,7 @@
         </main>
     </section>
 
-    <script src="script.js?v=4.7"></script>
+    <script src="script.js?v=4.8"></script>
     <script>
         // Initialize Lucide Icons
         lucide.createIcons();
