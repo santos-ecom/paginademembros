@@ -865,10 +865,8 @@ body {
 
     .main-content {
         padding: 1rem;
-        padding-top: calc(85px + env(safe-area-inset-top));
-        /* Increased clearance for header */
+        padding-top: calc(100px + env(safe-area-inset-top));
         padding-bottom: calc(90px + env(safe-area-inset-bottom));
-        /* Clearance for bottom nav */
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
     }
