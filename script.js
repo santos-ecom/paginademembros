@@ -118,26 +118,34 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // GLOBAL FUNCTION for Module Click (Foolproof)
-window.openImpactWrenchModule = function () {
+window.openImpactWrenchModule = function (event) {
+    if (event) {
+        event.stopPropagation();
+    }
     console.log("Global Module Click Triggered");
 
     const modulesView = document.getElementById('modules-view');
     const dashboardView = document.getElementById('dashboard-view');
 
     // Go to Dashboard
-    modulesView.style.opacity = '0';
-    setTimeout(() => {
-        modulesView.classList.add('hidden');
+    if (modulesView) {
+        modulesView.style.opacity = '0';
+        setTimeout(() => {
+            modulesView.classList.add('hidden');
 
-        dashboardView.classList.remove('hidden');
-        void dashboardView.offsetWidth;
-        dashboardView.classList.add('active');
+            if (dashboardView) {
+                dashboardView.classList.remove('hidden');
+                // Force reflow
+                void dashboardView.offsetWidth;
+                dashboardView.classList.add('active');
+            }
 
-        // Reset to first tab
-        if (typeof switchTab === 'function') {
-            switchTab('how-to-use');
-        }
-    }, 500);
+            // Reset to first tab
+            if (typeof switchTab === 'function') {
+                switchTab('how-to-use');
+            }
+        }, 500);
+    }
 }
 
 const allDetailViews = document.querySelectorAll('.main-content [id$="-view"]');

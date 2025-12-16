@@ -59,14 +59,14 @@
 
             <div class="modules-grid">
                 <!-- Module 1: Impact Wrench (Current Dashboard) -->
-                <div class="module-card glass-panel" id="module-impact-wrench" onclick="openImpactWrenchModule()">
+                <div class="module-card glass-panel" id="module-impact-wrench" onclick="openImpactWrenchModule(event)">
                     <div class="module-icon">
                         <i data-lucide="zap"></i>
                     </div>
                     <div class="module-content">
                         <h3>Master Your Tool</h3>
                         <p>Learn to Use the Tool You Acquired - Impact Wrench</p>
-                        <button class="btn-module">
+                        <button class="btn-module" onclick="openImpactWrenchModule(event)">
                             <span>Access Module</span>
                             <i data-lucide="arrow-right"></i>
                         </button>
@@ -929,7 +929,7 @@
         </main>
     </section>
 
-    <script src="script.js?v=3.3"></script>
+    <script src="script.js?v=3.4"></script>
     <script>
         // Initialize Lucide Icons
         lucide.createIcons();
