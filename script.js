@@ -128,9 +128,10 @@ window.openImpactWrenchModule = function (event) {
     const modulesView = document.getElementById('modules-view');
     const dashboardView = document.getElementById('dashboard-view');
 
-    // Go to Dashboard
     if (modulesView) {
-        modulesView.style.opacity = '0';
+        modulesView.style.opacity = '0'; // Hide modules
+        modulesView.classList.remove('active'); // Disable pointer events immediately
+
         setTimeout(() => {
             modulesView.classList.add('hidden');
 
@@ -139,6 +140,9 @@ window.openImpactWrenchModule = function (event) {
                 // Force reflow
                 void dashboardView.offsetWidth;
                 dashboardView.classList.add('active');
+
+                // CRITICAL FIX: Reset opacity to 1 because inline style '0' might linger from back navigation
+                dashboardView.style.opacity = '1';
             }
 
             // Reset to first tab
@@ -167,6 +171,7 @@ window.backToModules = function () {
                 modulesView.classList.remove('hidden');
                 void modulesView.offsetWidth; // reflow
                 modulesView.classList.add('active');
+                // CRITICAL: Ensure opacity is 1
                 modulesView.style.opacity = '1';
             }
         }, 500);
