@@ -19,7 +19,7 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="style.css?v=4.4">
+    <link rel="stylesheet" href="style.css?v=4.5">
 </head>
 
 <body>
@@ -107,9 +107,15 @@
                 <!-- Replaced Sidebar Icon/Text with Logo Image -->
                 <img src="espazie-logo.png" alt="Espazie Logo" class="sidebar-logo-img desktop-logo">
                 <img src="espazie-logo.png" alt="Espazie Logo" class="sidebar-logo-img mobile-logo">
-                <button id="mobile-logout-btn" class="mobile-logout-btn" onclick="performLogout()">
-                    <i data-lucide="log-out"></i>
-                </button>
+                <div style="display: flex; gap: 0.5rem;">
+                    <button id="mobile-modules-btn" class="mobile-logout-btn" onclick="backToModules()"
+                        style="border-color: rgba(255, 215, 0, 0.3); color: var(--accent-color);">
+                        <i data-lucide="grid"></i>
+                    </button>
+                    <button id="mobile-logout-btn" class="mobile-logout-btn" onclick="performLogout()">
+                        <i data-lucide="log-out"></i>
+                    </button>
+                </div>
             </div>
 
             <nav class="sidebar-nav">
@@ -938,7 +944,7 @@
         </main>
     </section>
 
-    <script src="script.js?v=4.4"></script>
+    <script src="script.js?v=4.5"></script>
     <script>
         // Initialize Lucide Icons
         lucide.createIcons();
