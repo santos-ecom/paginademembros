@@ -1,72 +1,108 @@
 // DOM Elements
 const loginForm = document.getElementById('login-form');
 const loginView = document.getElementById('login-view');
+const modulesView = document.getElementById('modules-view'); // New View
 const dashboardView = document.getElementById('dashboard-view');
 const navItems = document.querySelectorAll('.nav-item[data-tab]');
 const tabContents = document.querySelectorAll('.tab-content');
 const logoutBtn = document.getElementById('logout-btn');
+const modulesLogoutBtn = document.getElementById('modules-logout-btn');
 
-// --- Authentication Logic (Simulated) ---
+// Module Elements
+const moduleImpactWrench = document.getElementById('module-impact-wrench');
+const moduleOtherTools = document.getElementById('module-other-tools');
 
+// --- Authentication & Navigation Logic ---
+
+// 1. LOGIN
 loginForm.addEventListener('submit', (e) => {
     e.preventDefault();
-
-    // Validate only Email
     const email = document.getElementById('email').value;
-
     if (email) {
-        // Mock successful login
         performLogin();
     }
 });
 
 function performLogin() {
-    // 1. Hide Login
+    // Hide Login
     loginView.style.opacity = '0';
 
     setTimeout(() => {
         loginView.classList.remove('active');
         loginView.classList.add('hidden');
 
-        // 2. Show Dashboard
-        dashboardView.classList.remove('hidden');
-        // Trigger reflow
-        void dashboardView.offsetWidth;
-        dashboardView.classList.add('active');
-
-        // Reset navigation to first tab
-        switchTab('how-to-use');
-    }, 500); // Wait for transition
+        // Show Module Selection instead of Dashboard directly
+        modulesView.classList.remove('hidden');
+        void modulesView.offsetWidth; // trigger reflow
+        modulesView.style.opacity = '1'; // Ensure visible logic matches CSS
+    }, 500);
 }
 
-logoutBtn.addEventListener('click', () => {
-    performLogout();
-});
+// 2. MODULE SELECTION
+if (moduleImpactWrench) {
+    moduleImpactWrench.addEventListener('click', () => {
+        // Go to Dashboard
+        modulesView.style.opacity = '0';
+        setTimeout(() => {
+            modulesView.classList.add('hidden');
 
-// Mobile logout button
-const mobileLogoutBtn = document.getElementById('mobile-logout-btn');
-if (mobileLogoutBtn) {
-    mobileLogoutBtn.addEventListener('click', () => {
-        performLogout();
+            dashboardView.classList.remove('hidden');
+            void dashboardView.offsetWidth;
+            dashboardView.classList.add('active');
+
+            // Reset to first tab
+            switchTab('how-to-use');
+        }, 500);
     });
 }
 
+if (moduleOtherTools) {
+    moduleOtherTools.addEventListener('click', (e) => {
+        // Prevent action for now or show alert
+        e.stopPropagation(); // prevent any parent click issues
+        // Optional: alert('Content coming soon!');
+    });
+}
+
+// 3. LOGOUT
 function performLogout() {
-    // 1. Hide Dashboard
-    dashboardView.classList.remove('active');
+    // Determine which view is active to hide it
+    const activeView = dashboardView.classList.contains('active') ? dashboardView :
+        (!modulesView.classList.contains('hidden') ? modulesView : null);
+
+    if (activeView) {
+        activeView.classList.remove('active');
+        activeView.style.opacity = '0';
+    }
 
     setTimeout(() => {
-        dashboardView.classList.add('hidden');
+        if (activeView) activeView.classList.add('hidden');
 
-        // 2. Show Login
+        // Ensure ALL private views are hidden
+        dashboardView.classList.add('hidden');
+        dashboardView.classList.remove('active');
+        modulesView.classList.add('hidden');
+        modulesView.style.opacity = '0';
+
+        // Show Login
         loginView.classList.remove('hidden');
-        loginView.style.opacity = ''; // Clear inline opacity from login
+        loginView.style.opacity = '';
         void loginView.offsetWidth;
         loginView.classList.add('active');
 
         // Clear form
         loginForm.reset();
     }, 500);
+}
+
+// Bind Logout Buttons
+if (logoutBtn) logoutBtn.addEventListener('click', performLogout);
+if (modulesLogoutBtn) modulesLogoutBtn.addEventListener('click', performLogout);
+
+// Mobile logout button
+const mobileLogoutBtn = document.getElementById('mobile-logout-btn');
+if (mobileLogoutBtn) {
+    mobileLogoutBtn.addEventListener('click', performLogout);
 }
 
 
