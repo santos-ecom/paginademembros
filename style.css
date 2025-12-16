@@ -806,8 +806,9 @@ body {
 
     .sidebar-logo-img.mobile-logo {
         display: block !important;
-        max-height: 40px;
+        max-height: 45px;
         width: auto;
+        object-fit: contain;
     }
 
     /* Hide sidebar text/footer items on mobile header */
