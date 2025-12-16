@@ -412,6 +412,23 @@ body {
     align-items: center;
     gap: 0.8rem;
     margin-bottom: 3rem;
+    justify-content: center;
+    /* Center logo */
+}
+
+/* Sidebar Logo Styles - Fixed Sizing to prevent huge overlap */
+.sidebar-logo-img {
+    max-width: 140px;
+    height: auto;
+    display: block;
+}
+
+.desktop-logo {
+    display: block;
+}
+
+.mobile-logo {
+    display: none;
 }
 
 .brand-icon-small {
@@ -932,32 +949,33 @@ body {
     .sidebar {
         width: 100%;
         height: auto;
-        padding: 1.2rem 1.5rem;
-        padding-top: max(1.2rem, env(safe-area-inset-top));
+        border-right: none;
+        border-bottom: 1px solid var(--glass-border);
+        position: fixed;
+        top: 0;
+        z-index: 100;
+        background: rgba(5, 5, 5, 0.95);
+        padding: 0.8rem 1rem;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        border-right: none;
-        border-bottom: 1px solid var(--glass-border);
-        background: rgba(5, 5, 5, 0.98);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 1000;
-        min-height: 75px;
-        height: auto;
     }
 
     .sidebar-header {
         margin-bottom: 0;
         width: 100%;
         justify-content: space-between;
-        display: flex;
-        align-items: center;
-        padding: 0 0.5rem;
+        padding: 0;
+    }
+
+    .desktop-logo {
+        display: none;
+    }
+
+    .mobile-logo {
+        display: block;
+        max-height: 40px;
+        width: auto;
     }
 
     /* Mobile logout button */
