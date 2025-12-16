@@ -108,11 +108,23 @@ body {
     min-height: 100vh;
     transition: opacity 0.5s ease-in-out;
     opacity: 1;
+    position: relative;
+    /* Ensure z-index works */
+    z-index: 10;
+}
+
+.view.active {
+    z-index: 100;
+    /* Active view always on top */
+    pointer-events: auto;
 }
 
 .view.hidden {
     display: none !important;
     opacity: 0;
+    pointer-events: none !important;
+    /* Double safety */
+    z-index: -1;
 }
 
 /* MODULES SELECTION SCREEN */
