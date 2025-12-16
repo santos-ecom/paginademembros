@@ -34,7 +34,8 @@ function performLogin() {
         // Show Module Selection instead of Dashboard directly
         modulesView.classList.remove('hidden');
         void modulesView.offsetWidth; // trigger reflow
-        modulesView.style.opacity = '1'; // Ensure visible logic matches CSS
+        modulesView.classList.add('active'); // CRTICAL: Enable pointer events
+        modulesView.style.opacity = '1';
     }, 500);
 }
 
