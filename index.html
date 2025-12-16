@@ -124,6 +124,11 @@
             </nav>
 
             <div class="sidebar-footer">
+                <button id="back-to-modules-btn" class="nav-item" onclick="backToModules()"
+                    style="margin-bottom: 0.5rem;">
+                    <i data-lucide="grid"></i>
+                    <span>Modules</span>
+                </button>
                 <button id="logout-btn" class="nav-item logout" onclick="performLogout()">
                     <i data-lucide="log-out"></i>
                     <span>Logout</span>
@@ -929,7 +934,7 @@
         </main>
     </section>
 
-    <script src="script.js?v=3.8"></script>
+    <script src="script.js?v=3.9"></script>
     <script>
         // Initialize Lucide Icons
         lucide.createIcons();

@@ -149,6 +149,30 @@ window.openImpactWrenchModule = function (event) {
     }
 }
 
+// GLOBAL FUNCTION to Go Back to Modules
+window.backToModules = function () {
+    console.log("Back to Modules Triggered");
+
+    const dashboardView = document.getElementById('dashboard-view');
+    const modulesView = document.getElementById('modules-view');
+
+    if (dashboardView) {
+        dashboardView.style.opacity = '0';
+        dashboardView.classList.remove('active');
+
+        setTimeout(() => {
+            dashboardView.classList.add('hidden');
+
+            if (modulesView) {
+                modulesView.classList.remove('hidden');
+                void modulesView.offsetWidth; // reflow
+                modulesView.classList.add('active');
+                modulesView.style.opacity = '1';
+            }
+        }, 500);
+    }
+}
+
 const allDetailViews = document.querySelectorAll('.main-content [id$="-view"]');
 const allListContainers = [
     document.querySelector('.hero-card'),
