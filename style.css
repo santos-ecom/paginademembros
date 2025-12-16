@@ -840,24 +840,23 @@ body {
 
     .nav-item {
         flex-direction: column;
-        gap: 0.3rem;
-        padding: 0.5rem;
+        gap: 0;
+        padding: 0.8rem 0.5rem;
         border-radius: 8px;
         font-size: 0.7rem;
         justify-content: center;
+        align-items: center;
         flex: 1;
         max-width: 80px;
     }
 
     .nav-item i {
-        width: 20px;
-        height: 20px;
+        width: 24px;
+        height: 24px;
     }
 
     .nav-item span {
-        display: block;
-        /* Show text on mobile for clarity */
-        font-size: 0.65rem;
+        display: none;
     }
 
     .nav-item.logout {
