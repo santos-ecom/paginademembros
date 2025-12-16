@@ -927,5 +927,7 @@ body {
     .login-container {
         margin: 0 1.5rem;
         max-width: calc(100% - 3rem);
+        /* Shift slightly up */
+        margin-top: -15vh;
     }
 }
