@@ -119,35 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // GLOBAL FUNCTION for Module Click (Foolproof)
-window.openImpactWrenchModule = function (event) {
-    if (event) {
-        event.stopPropagation();
-    }
-    console.log("Global Module Click Triggered");
-
-    const modulesView = document.getElementById('modules-view');
-    const dashboardView = document.getElementById('dashboard-view');
-
-    if (modulesView) {
-        modulesView.style.opacity = '0'; // Hide modules
-        modulesView.classList.remove('active'); // Disable pointer events immediately
-
-        setTimeout(() => {
-            modulesView.classList.add('hidden');
-
-            if (dashboardView) {
-                dashboardView.classList.remove('hidden');
-                // Force reflow
-                void dashboardView.offsetWidth;
-                dashboardView.classList.add('active');
-
-                // CRITICAL FIX: Reset opacity to 1 because inline style '0' might linger from back navigation
-                dashboardView.style.opacity = '1';
-            }
-
-            // Reset to first tab
-            if (typeof switchTab === 'function') {
-                switchTab('how-to-use');
+switchTab('how-to-use');
             }
         }, 500);
     }
