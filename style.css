@@ -192,9 +192,11 @@ body {
 }
 
 .module-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--accent-color);
-    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.1);
+    /* transform: translateY(-5px); Removed as per user request */
+    /* border-color: var(--accent-color); Removed as per user request */
+    /* box-shadow: 0 10px 30px rgba(255, 215, 0, 0.1); Removed as per user request */
+    border-color: rgba(255, 255, 255, 0.05);
+    /* Keep original border */
 }
 
 .module-card.locked {
