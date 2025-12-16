@@ -38,6 +38,57 @@ function performLogin() {
     }, 500);
 }
 
+// 3. LOGOUT - GLOBAL FUNCTION
+window.performLogout = function () {
+    console.log("Global Logout Triggered");
+
+    // Determine which view is active to hide it
+    const dashboardView = document.getElementById('dashboard-view');
+    const modulesView = document.getElementById('modules-view');
+    const loginView = document.getElementById('login-view');
+    const loginForm = document.getElementById('login-form');
+
+    const activeView = (dashboardView && dashboardView.classList.contains('active')) ? dashboardView :
+        ((modulesView && !modulesView.classList.contains('hidden')) ? modulesView : null);
+
+    if (activeView) {
+        activeView.classList.remove('active');
+        activeView.style.opacity = '0';
+    }
+
+    setTimeout(() => {
+        if (activeView) activeView.classList.add('hidden');
+
+        // Ensure ALL private views are hidden
+        if (dashboardView) {
+            dashboardView.classList.add('hidden');
+            dashboardView.classList.remove('active');
+        }
+        if (modulesView) {
+            modulesView.classList.add('hidden');
+            modulesView.style.opacity = '0';
+        }
+
+        // Show Login
+        if (loginView) {
+            loginView.classList.remove('hidden');
+            loginView.style.opacity = '';
+            void loginView.offsetWidth;
+            loginView.classList.add('active');
+        }
+
+        // Clear form
+        if (loginForm) loginForm.reset();
+    }, 500);
+}
+
+// Bind Logout Buttons (Legacy listener + ensure global access)
+const mobileLogoutBtn = document.getElementById('mobile-logout-btn');
+
+if (logoutBtn) logoutBtn.addEventListener('click', window.performLogout);
+if (modulesLogoutBtn) modulesLogoutBtn.addEventListener('click', window.performLogout);
+if (mobileLogoutBtn) mobileLogoutBtn.addEventListener('click', window.performLogout);
+
 // --- Navigation Logic ---
 
 document.addEventListener('DOMContentLoaded', () => {

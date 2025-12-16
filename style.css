@@ -186,7 +186,7 @@ body {
 
 .module-card.locked {
     opacity: 0.7;
-    cursor: default;
+    cursor: not-allowed;
 }
 
 .module-card.locked:hover {

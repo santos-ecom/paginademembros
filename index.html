@@ -74,7 +74,8 @@
                 </div>
 
                 <!-- Module 2: Other Tools (Placeholder) -->
-                <div class="module-card glass-panel locked" id="module-other-tools">
+                <div class="module-card glass-panel locked" id="module-other-tools"
+                    onclick="alert('This module is coming soon!')">
                     <div class="module-icon">
                         <i data-lucide="wrench"></i>
                     </div>
@@ -89,7 +90,7 @@
                 </div>
             </div>
 
-            <button id="modules-logout-btn" class="text-btn">
+            <button id="modules-logout-btn" class="text-btn" onclick="performLogout()">
                 <i data-lucide="log-out"></i> Logout
             </button>
         </div>
@@ -102,7 +103,7 @@
                 <!-- Replaced Sidebar Icon/Text with Logo Image -->
                 <img src="espazie-logo.png" alt="Espazie Logo" class="sidebar-logo-img desktop-logo">
                 <img src="espazie-logo.png" alt="Espazie Logo" class="sidebar-logo-img mobile-logo">
-                <button id="mobile-logout-btn" class="mobile-logout-btn">
+                <button id="mobile-logout-btn" class="mobile-logout-btn" onclick="performLogout()">
                     <i data-lucide="log-out"></i>
                 </button>
             </div>
@@ -123,7 +124,7 @@
             </nav>
 
             <div class="sidebar-footer">
-                <button id="logout-btn" class="nav-item logout">
+                <button id="logout-btn" class="nav-item logout" onclick="performLogout()">
                     <i data-lucide="log-out"></i>
                     <span>Logout</span>
                 </button>
@@ -928,7 +929,7 @@
         </main>
     </section>
 
-    <script src="script.js?v=3.1"></script>
+    <script src="script.js?v=3.2"></script>
     <script>
         // Initialize Lucide Icons
         lucide.createIcons();
