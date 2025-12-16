@@ -744,12 +744,14 @@ body {
         align-items: center;
         border-right: none;
         border-bottom: 1px solid var(--glass-border);
-        background: rgba(5, 5, 5, 0.8);
+        background: rgba(5, 5, 5, 0.95);
+        /* More opaque */
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
         position: fixed;
         top: 0;
-        z-index: 50;
+        z-index: 1000;
+        /* Ensure it stays on top */
     }
 
     .sidebar-header {
@@ -826,10 +828,10 @@ body {
 
     .main-content {
         padding: 1rem;
-        padding-top: calc(60px + env(safe-area-inset-top));
-        /* Clear top header */
-        padding-bottom: calc(80px + env(safe-area-inset-bottom));
-        /* Clear bottom nav */
+        padding-top: calc(85px + env(safe-area-inset-top));
+        /* Increased clearance for header */
+        padding-bottom: calc(90px + env(safe-area-inset-bottom));
+        /* Clearance for bottom nav */
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
     }
