@@ -134,6 +134,23 @@ body {
     align-items: center;
     padding: 2rem;
     background: radial-gradient(circle at top right, rgba(255, 215, 0, 0.05), transparent 40%);
+    overflow-y: auto;
+    /* Allow scrolling */
+    height: 100%;
+    /* Fill container */
+    width: 100%;
+}
+
+/* Mobile responsive adjustment for Modules View */
+@media (max-height: 800px),
+(max-width: 768px) {
+    #modules-view {
+        align-items: flex-start;
+        /* Start from top to prevent cutting off top content */
+        padding-top: 4rem;
+        /* Add top space */
+        padding-bottom: 2rem;
+    }
 }
 
 .modules-container {
