@@ -127,7 +127,7 @@ window.openImpactWrenchModule = function (event) {
 
 window.openOtherToolsModule = function (event) {
     if (event) event.stopPropagation();
-    console.log("Opening Other Tools Module - v5.10"); // Version Log
+    console.log("Opening Other Tools Module - v5.11"); // Version Log
     resetSubmodules();
 
     // Explicitly unhide the tools grid to be 100% sure
@@ -600,6 +600,28 @@ window.openOscillatingMultiToolManual = function () {
 if (backFromOscillatingMultiToolBtn) {
     backFromOscillatingMultiToolBtn.addEventListener('click', () => {
         if (oscillatingMultiToolView) oscillatingMultiToolView.classList.add('hidden');
+        if (otherToolsGrid) otherToolsGrid.classList.remove('hidden');
+    });
+}
+
+// --- Orbital Sander Manual Navigation ---
+const orbitalSanderView = document.getElementById('orbital-sander-view');
+const backFromOrbitalSanderBtn = document.getElementById('back-from-orbital-sander');
+
+window.openOrbitalSanderManual = function () {
+    console.log("Opening Orbital Sander Manual");
+    if (otherToolsGrid) otherToolsGrid.classList.add('hidden');
+    if (orbitalSanderView) {
+        orbitalSanderView.classList.remove('hidden');
+        // Scroll to top of main content
+        const mainContent = document.querySelector('#other-tools-view .main-content');
+        if (mainContent) mainContent.scrollTop = 0;
+    }
+}
+
+if (backFromOrbitalSanderBtn) {
+    backFromOrbitalSanderBtn.addEventListener('click', () => {
+        if (orbitalSanderView) orbitalSanderView.classList.add('hidden');
         if (otherToolsGrid) otherToolsGrid.classList.remove('hidden');
     });
 }
