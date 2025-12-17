@@ -127,7 +127,7 @@ window.openImpactWrenchModule = function (event) {
 
 window.openOtherToolsModule = function (event) {
     if (event) event.stopPropagation();
-    console.log("Opening Other Tools Module - v5.8"); // Version Log
+    console.log("Opening Other Tools Module - v5.9"); // Version Log
     resetSubmodules();
 
     // Explicitly unhide the tools grid to be 100% sure
@@ -196,13 +196,11 @@ window.backToModules = function () {
 function resetSubmodules() {
     // Query elements dynamically to ensure they exist
     const allDetailViews = document.querySelectorAll('.main-content [id$="-view"]');
-    const allListContainers = [
-        document.querySelector('.hero-card'),
-        document.querySelector('.grid-container'), // Dashboard grid
-        document.querySelector('#other-tools-view .grid-container'), // Tools grid
-        document.getElementById('best-practices-list'),
-        document.getElementById('maintenance-grid')
-    ];
+
+    // Select ALL container types that act as main lists
+    const allListContainers = document.querySelectorAll(
+        '.hero-card, .grid-container, .list-card, .info-grid'
+    );
 
     // 1. Close all detailed views
     allDetailViews.forEach(view => {
