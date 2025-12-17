@@ -1165,3 +1165,29 @@ body {
         margin-top: -15vh;
     }
 }
+
+/* FORCE VISIBILITY FOR OTHER TOOLS VIEW - DEBUG FIX */
+#other-tools-view .main-content,
+#other-tools-view .content-area {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+#other-tools-view .content-area {
+    display: block !important;
+    height: 100%;
+    width: 100%;
+}
+
+#other-tools-view .grid-container {
+    display: grid !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+@media (min-width: 769px) {
+    #other-tools-view .main-content {
+        z-index: 50;
+        position: relative;
+    }
+}
