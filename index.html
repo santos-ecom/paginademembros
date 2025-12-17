@@ -997,7 +997,7 @@
                         <p>Straight cuts in wood and materials</p>
                     </div>
                     <!-- Tool 4 -->
-                    <div class="card glass-panel clickable-card" onclick="selectTool('Jigsaw')">
+                    <div class="card glass-panel clickable-card" onclick="openJigsawManual()">
                         <i data-lucide="scissors" class="success-icon" style="color: var(--accent-color);"></i>
                         <h3>Jigsaw</h3>
                         <p>Curved and intricate cuts</p>
@@ -1485,6 +1485,171 @@
                                 longevity.</p>
                             <p>Always use the appropriate blade, maintain full attention during operation, and respect
                                 the tool’s limits.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- JIGSAW MANUAL VIEW -->
+                <div id="jigsaw-view" class="hidden">
+                    <button id="back-from-jigsaw" class="btn-secondary">
+                        <i data-lucide="arrow-left"></i> Back to Tools
+                    </button>
+
+                    <div class="video-container-full glass-panel">
+                        <h2>Complete User Manual – Jigsaw</h2>
+                        <div class="instruction-text">
+                            <p>The jigsaw is a versatile power tool designed to perform straight, curved, and detailed
+                                cuts in materials such as wood, MDF, plywood, plastic, acrylic, and thin metals, using
+                                the appropriate blade. Its main advantage is the ability to execute precise cuts and
+                                complex shapes with a high level of control.</p>
+
+                            <p>Proper use ensures operator safety, better finishing quality, higher precision, and
+                                longer tool lifespan.</p>
+
+                            <p>Read all instructions carefully before using the tool.</p>
+
+                            <button class="btn-watch" data-video-src="https://www.youtube.com/embed/_ztM_Y_PlAo">
+                                <i data-lucide="play-circle"></i> Watch Video
+                            </button>
+
+                            <h3>1. Understanding the main components</h3>
+                            <p>Before operating the jigsaw, familiarize yourself with its main components:</p>
+                            <ul>
+                                <li>Saw blade</li>
+                                <li>Blade clamping system</li>
+                                <li>Base plate (shoe)</li>
+                                <li>Bevel adjustment (angled cuts)</li>
+                                <li>Speed selector</li>
+                                <li>Orbital (pendulum) action (on some models)</li>
+                                <li>Power trigger</li>
+                                <li>Safety lock</li>
+                                <li>Ergonomic handle</li>
+                                <li>Dust exhaust port</li>
+                                <li>Power cord or battery</li>
+                            </ul>
+                            <p>Understanding these components is essential for proper adjustments and safe operation.
+                            </p>
+
+                            <h3>2. Preparation before use</h3>
+                            <p>Before turning on the jigsaw:</p>
+                            <ul>
+                                <li>Ensure the tool is unplugged or the battery is removed.</li>
+                                <li>Check that the blade is properly installed and securely locked.</li>
+                                <li>Select the correct blade for the material and type of cut.</li>
+                                <li>Adjust the base plate for straight or angled cuts.</li>
+                                <li>Set the appropriate cutting speed for the material.</li>
+                                <li>Secure the workpiece firmly using clamps.</li>
+                                <li>Make sure the cutting area is clear of obstacles.</li>
+                            </ul>
+                            <p>Never make adjustments while the tool is powered on.</p>
+
+                            <h3>3. Choosing the correct blade</h3>
+                            <p>Selecting the proper blade directly affects cut quality and safety:</p>
+                            <ul>
+                                <li><strong>Wood blades:</strong> larger, widely spaced teeth</li>
+                                <li><strong>Fine-finish blades:</strong> small, closely spaced teeth</li>
+                                <li><strong>Metal blades:</strong> fine, hardened teeth</li>
+                                <li><strong>Plastic blades:</strong> designed to prevent melting</li>
+                                <li><strong>Narrow blades:</strong> ideal for tight curves</li>
+                            </ul>
+                            <p>Never use dull, bent, or damaged blades.</p>
+
+                            <h3>4. Speed and orbital action adjustment</h3>
+                            <ul>
+                                <li><strong>Low speed:</strong> metals, plastics, and delicate cuts</li>
+                                <li><strong>Medium speed:</strong> MDF and plywood</li>
+                                <li><strong>High speed:</strong> solid wood</li>
+                            </ul>
+                            <p>The orbital action increases cutting aggressiveness and should be used only for fast,
+                                straight cuts in wood. For curved cuts or fine finishing, keep the orbital action turned
+                                off or set to the lowest level.</p>
+
+                            <h3>5. How to make straight cuts</h3>
+                            <ul>
+                                <li>Mark the cutting line clearly on the material.</li>
+                                <li>Place the base plate flat against the workpiece.</li>
+                                <li>Hold the tool firmly.</li>
+                                <li>Pull the trigger and allow the blade to reach the selected speed.</li>
+                                <li>Guide the jigsaw forward smoothly, keeping the base plate in full contact with the
+                                    surface.</li>
+                                <li>Do not force the tool. Let the blade cut naturally.</li>
+                            </ul>
+                            <p>Maintaining steady control prevents vibration and blade deflection.</p>
+
+                            <h3>6. How to make curved cuts</h3>
+                            <ul>
+                                <li>Use a narrow blade designed for curved cutting.</li>
+                                <li>Operate at moderate speed.</li>
+                                <li>Make smooth, gradual movements.</li>
+                                <li>Avoid twisting the tool sharply.</li>
+                                <li>Slow down for tight curves.</li>
+                            </ul>
+                            <p>Patience and control are essential for accurate curved cuts.</p>
+
+                            <h3>7. Bevel (angled) cuts</h3>
+                            <ul>
+                                <li>Adjust the base plate to the desired angle.</li>
+                                <li>Lock the adjustment securely.</li>
+                                <li>Follow the same procedure used for straight cuts.</li>
+                                <li>Pay extra attention to alignment and stability.</li>
+                            </ul>
+                            <p>Bevel cuts require increased control and precision.</p>
+
+                            <h3>8. Proper posture and tool control</h3>
+                            <ul>
+                                <li>Use both hands whenever possible.</li>
+                                <li>Keep your feet firmly planted and balanced.</li>
+                                <li>Avoid unstable working positions.</li>
+                                <li>Keep hands away from the blade at all times.</li>
+                                <li>Stand slightly to the side of the cutting line.</li>
+                            </ul>
+                            <p>Proper posture improves accuracy and reduces the risk of accidents.</p>
+
+                            <h3>9. Safety precautions during use</h3>
+                            <ul>
+                                <li>Always wear safety glasses.</li>
+                                <li>Use a dust mask when cutting dusty materials.</li>
+                                <li>Wear hearing protection when necessary.</li>
+                                <li>Avoid loose clothing, loose gloves, or accessories.</li>
+                                <li>Never touch the blade immediately after use.</li>
+                                <li>Do not operate the tool in wet or damp environments.</li>
+                            </ul>
+                            <p>Safety should always be the top priority.</p>
+
+                            <h3>10. Continuous use and problem prevention</h3>
+                            <ul>
+                                <li>Take breaks during extended cutting sessions.</li>
+                                <li>Do not force the blade through tight curves.</li>
+                                <li>If the blade binds, release the trigger immediately.</li>
+                                <li>Do not cut materials beyond the tool’s rated capacity.</li>
+                            </ul>
+                            <p>These precautions help prevent blade breakage and motor damage.</p>
+
+                            <h3>11. Procedures after use</h3>
+                            <ul>
+                                <li>Turn off the tool and unplug it or remove the battery.</li>
+                                <li>Allow the blade to cool before removal.</li>
+                                <li>Clean the jigsaw with a dry cloth.</li>
+                                <li>Remove dust and debris from the base plate.</li>
+                                <li>Store the tool in a dry, secure location.</li>
+                            </ul>
+
+                            <h3>12. Basic maintenance and care</h3>
+                            <ul>
+                                <li>Regularly inspect blade condition.</li>
+                                <li>Clean the blade clamping mechanism.</li>
+                                <li>Do not use worn blades.</li>
+                                <li>Use only compatible accessories.</li>
+                                <li>Seek authorized service if any malfunction occurs.</li>
+                            </ul>
+                            <p>Preventive maintenance ensures better performance and longer service life.</p>
+
+                            <h3>13. Final recommendations</h3>
+                            <p>The jigsaw is an extremely versatile and efficient tool when used correctly. Following
+                                these instructions ensures precise cuts, high-quality finishing, operator safety, and
+                                equipment preservation.</p>
+                            <p>Always use the correct blade, maintain full attention during operation, and respect the
+                                tool’s limits.</p>
                         </div>
                     </div>
                 </div>

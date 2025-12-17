@@ -537,3 +537,25 @@ if (backFromCircularSawBtn) {
         if (otherToolsGrid) otherToolsGrid.classList.remove('hidden');
     });
 }
+
+// --- Jigsaw Manual Navigation ---
+const jigsawView = document.getElementById('jigsaw-view');
+const backFromJigsawBtn = document.getElementById('back-from-jigsaw');
+
+window.openJigsawManual = function () {
+    console.log("Opening Jigsaw Manual");
+    if (otherToolsGrid) otherToolsGrid.classList.add('hidden');
+    if (jigsawView) {
+        jigsawView.classList.remove('hidden');
+        // Scroll to top of main content
+        const mainContent = document.querySelector('#other-tools-view .main-content');
+        if (mainContent) mainContent.scrollTop = 0;
+    }
+}
+
+if (backFromJigsawBtn) {
+    backFromJigsawBtn.addEventListener('click', () => {
+        if (jigsawView) jigsawView.classList.add('hidden');
+        if (otherToolsGrid) otherToolsGrid.classList.remove('hidden');
+    });
+}
