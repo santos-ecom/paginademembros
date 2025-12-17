@@ -191,6 +191,7 @@ const allDetailViews = document.querySelectorAll('.main-content [id$="-view"]');
 const allListContainers = [
     document.querySelector('.hero-card'),
     document.querySelector('.grid-container'),
+    document.querySelector('#other-tools-view .grid-container'), // Ensure this is selected
     document.getElementById('best-practices-list'),
     document.getElementById('maintenance-grid')
 ];
@@ -386,21 +387,52 @@ if (backFromExternalCleaningBtn && maintenanceGrid) {
     });
 }
 
-// --- Generic Video Logic (Direct Redirect) ---
+// --- Generic Video Logic (Modal Embed) ---
 const watchButtons = document.querySelectorAll('.btn-watch');
+const videoModal = document.getElementById('video-modal');
+const modalIframe = document.getElementById('modal-iframe');
+const closeModalBtn = document.getElementById('close-modal');
+
+function openVideoModal(videoSrc) {
+    if (videoModal && modalIframe) {
+        modalIframe.src = videoSrc;
+        videoModal.classList.add('active');
+        videoModal.classList.remove('hidden'); // Ensure hidden class is removed if present
+    }
+}
+
+function closeVideoModal() {
+    if (videoModal && modalIframe) {
+        videoModal.classList.remove('active');
+        setTimeout(() => {
+            modalIframe.src = ''; // Stop video
+            videoModal.classList.add('hidden'); // Re-add hidden if logic requires it, purely visual usually handled by opacity in CSS but good for safety
+        }, 300); // Wait for transition
+    }
+}
 
 watchButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', (e) => {
+        e.stopPropagation(); // Prevent bubbling just in case
         const videoSrc = btn.getAttribute('data-video-src');
         if (videoSrc) {
-            // Convert embed URL to watch URL for direct viewing
-            // From: https://www.youtube.com/embed/VIDEO_ID
-            // To:   https://www.youtube.com/watch?v=VIDEO_ID
-            const watchUrl = videoSrc.replace('embed/', 'watch?v=');
-            window.open(watchUrl, '_blank');
+            openVideoModal(videoSrc);
         }
     });
 });
+
+if (closeModalBtn) {
+    closeModalBtn.addEventListener('click', closeVideoModal);
+}
+
+// Close on click outside (overlay)
+if (videoModal) {
+    videoModal.addEventListener('click', (e) => {
+        if (e.target === videoModal) {
+            closeVideoModal();
+        }
+    });
+}
 
 // Storage Navigation
 const storageCard = document.getElementById('storage-card');
@@ -428,4 +460,28 @@ if (backFromStorageBtn && maintenanceGrid) {
 window.selectTool = function (toolName) {
     console.log(`Tool selected: ${toolName}`);
     alert(`Módulo: ${toolName}\nConteúdo em breve!`);
+}
+
+// --- Drill / Driver Manual Navigation ---
+const drillDriverView = document.getElementById('drill-driver-view');
+const backFromDrillDriverBtn = document.getElementById('back-from-drill-driver');
+// More specific selector to avoid conflict with dashboard grid
+const otherToolsGrid = document.querySelector('#other-tools-view .grid-container');
+
+window.openDrillDriverManual = function () {
+    console.log("Opening Drill/Driver Manual");
+    if (otherToolsGrid) otherToolsGrid.classList.add('hidden');
+    if (drillDriverView) {
+        drillDriverView.classList.remove('hidden');
+        // Scroll to top of main content
+        const mainContent = document.querySelector('#other-tools-view .main-content');
+        if (mainContent) mainContent.scrollTop = 0;
+    }
+}
+
+if (backFromDrillDriverBtn) {
+    backFromDrillDriverBtn.addEventListener('click', () => {
+        if (drillDriverView) drillDriverView.classList.add('hidden');
+        if (otherToolsGrid) otherToolsGrid.classList.remove('hidden');
+    });
 }

@@ -204,7 +204,7 @@
                                 <p style="font-size: 1.1rem; color: white;">When your impact wrench arrives, follow this
                                     step-by-step guide to ensure everything is correct and ready for use.</p>
 
-                                <button class="btn-watch" data-video-src="https://www.youtube.com/embed/uVnMqD8BnJc">
+                                <button class="btn-watch" data-video-src="https://www.youtube.com/embed/brcfJ46m6Us">
                                     <i data-lucide="play-circle"></i> Watch Video
                                 </button>
 
@@ -991,10 +991,10 @@
             <div class="content-area active">
                 <div class="grid-container" style="grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));">
                     <!-- Tool 1 -->
-                    <div class="card glass-panel clickable-card" onclick="selectTool('Drill / Driver')">
+                    <div class="card glass-panel clickable-card" onclick="openDrillDriverManual()">
                         <i data-lucide="drill" class="success-icon" style="color: var(--accent-color);"></i>
                         <h3>Drill / Driver</h3>
-                        <p>Essential for drilling and driving screws</p>
+                        <p>Complete User Manual & Instructions</p>
                     </div>
                     <!-- Tool 2 -->
                     <div class="card glass-panel clickable-card" onclick="selectTool('Rotary Hammer')">
@@ -1043,6 +1043,152 @@
                         <i data-lucide="layers" class="success-icon" style="color: var(--accent-color);"></i>
                         <h3>Electric Planer</h3>
                         <p>Smoothing wood surfaces and edges</p>
+                    </div>
+                </div>
+
+                <!-- DRILL/DRIVER MANUAL VIEW -->
+                <div id="drill-driver-view" class="hidden">
+                    <button id="back-from-drill-driver" class="btn-secondary">
+                        <i data-lucide="arrow-left"></i> Back to Tools
+                    </button>
+
+                    <div class="video-container-full glass-panel">
+                        <h2>Complete User Manual – Drill/Driver</h2>
+                        <div class="instruction-text">
+                            <p>The drill/driver is a multifunctional power tool designed to drill holes, drive screws,
+                                and
+                                remove fasteners in a wide variety of materials such as wood, metal, plastic, drywall
+                                and,
+                                in some models, concrete and masonry. Proper use ensures better performance, higher
+                                precision, operator safety, and longer tool lifespan.</p>
+
+                            <div class="warning-box"
+                                style="margin: 1.5rem 0; padding: 1rem; border-left: 4px solid var(--accent-color); background: rgba(255, 215, 0, 0.1);">
+                                <strong>Important:</strong> Read all instructions carefully before using the tool.
+                            </div>
+
+                            <h3>1. Understanding the main components</h3>
+                            <p>Before operating the drill/driver, familiarize yourself with its main parts:</p>
+                            <ul>
+                                <li>Chuck (where the drill bit or driver bit is installed)</li>
+                                <li>Torque adjustment ring</li>
+                                <li>Mode selector (drilling, driving, or hammer mode)</li>
+                                <li>Variable-speed trigger</li>
+                                <li>Forward/reverse switch</li>
+                                <li>Ergonomic grip</li>
+                                <li>Battery pack or power cord</li>
+                                <li>Motor ventilation slots</li>
+                            </ul>
+                            <p>Knowing these components helps you make correct adjustments and avoid mistakes during
+                                operation.</p>
+
+                            <h3>2. Proper preparation before use</h3>
+                            <p>Before turning on the tool:</p>
+                            <ul>
+                                <li>Check that the battery is fully charged or that the power cord is in good condition.
+                                </li>
+                                <li>Make sure the trigger is not pressed.</li>
+                                <li>Select the correct drill bit or driver bit for the task and material.</li>
+                                <li>Insert the bit into the chuck and tighten it securely, ensuring it is centered.</li>
+                                <li>Adjust the torque and operating mode before starting.</li>
+                            </ul>
+                            <p>Never make adjustments while the tool is powered on.</p>
+
+                            <h3>3. Choosing the correct drill bit or driver bit</h3>
+                            <p>Using the proper accessory is essential for safety and efficiency:</p>
+                            <ul>
+                                <li><strong>Wood drill bits:</strong> center point with side cutters</li>
+                                <li><strong>Metal drill bits:</strong> conical tip</li>
+                                <li><strong>Masonry drill bits:</strong> carbide tip (use only with hammer mode)</li>
+                                <li><strong>Driver bits:</strong> compatible with screw head types (Phillips, flat,
+                                    Torx, Allen)</li>
+                            </ul>
+                            <p>Incorrect or damaged bits may break, damage the material, or cause accidents.</p>
+
+                            <h3>4. Torque and speed adjustment</h3>
+                            <p>Torque control regulates the amount of force applied to the screw:</p>
+                            <ul>
+                                <li><strong>Low torque:</strong> delicate materials or small screws</li>
+                                <li><strong>Medium torque:</strong> wood and drywall</li>
+                                <li><strong>High torque:</strong> harder materials</li>
+                            </ul>
+                            <p>The trigger allows progressive speed control. Start slowly and increase speed as needed.
+                                This improves accuracy and prevents slipping.</p>
+
+                            <h3>5. Using the tool in driver mode</h3>
+                            <ul>
+                                <li>Align the driver bit with the screw head.</li>
+                                <li>Keep the tool straight against the surface.</li>
+                                <li>Start at low speed.</li>
+                                <li>Apply steady, moderate pressure.</li>
+                                <li>Release the trigger immediately once the screw is fully seated.</li>
+                                <li>To remove screws, switch the rotation direction to reverse.</li>
+                            </ul>
+
+                            <h3>6. Using the tool in drilling mode</h3>
+                            <ul>
+                                <li>Mark the drilling point in advance.</li>
+                                <li>Position the drill bit perpendicular to the surface.</li>
+                                <li>Hold the tool firmly.</li>
+                                <li>Begin drilling at low speed to prevent slipping.</li>
+                                <li>Gradually increase speed.</li>
+                                <li>Do not force the tool; allow the drill bit to do the work.</li>
+                                <li>For concrete or masonry, use proper bits and activate hammer mode if available.</li>
+                            </ul>
+
+                            <h3>7. Proper posture and tool control</h3>
+                            <ul>
+                                <li>Use both hands whenever possible.</li>
+                                <li>Keep your feet firmly on the ground.</li>
+                                <li>Avoid unstable positions.</li>
+                                <li>Do not work overhead without proper support.</li>
+                                <li>Keep the power cord or battery away from the drilling area.</li>
+                            </ul>
+                            <p>Proper posture reduces fatigue and increases precision.</p>
+
+                            <h3>8. Safety precautions during use</h3>
+                            <ul>
+                                <li>Always wear safety glasses.</li>
+                                <li>Use protective gloves when appropriate.</li>
+                                <li>Avoid loose clothing, jewelry, or accessories.</li>
+                                <li>Do not use the tool in wet or damp environments.</li>
+                                <li>Keep children and bystanders away from the work area.</li>
+                                <li>Do not touch the drill bit immediately after use, as it may be hot.</li>
+                            </ul>
+
+                            <h3>9. Continuous use and motor care</h3>
+                            <ul>
+                                <li>Take breaks during prolonged use.</li>
+                                <li>Keep ventilation openings clear.</li>
+                                <li>Stop using the tool if you notice unusual noises, vibration, or burning smells.</li>
+                                <li>If the tool overheats, turn it off and allow it to cool down.</li>
+                            </ul>
+                            <p>These precautions help protect the motor and extend tool life.</p>
+
+                            <h3>10. Procedures after use</h3>
+                            <ul>
+                                <li>Turn off the tool.</li>
+                                <li>Remove the battery or unplug it from the power source.</li>
+                                <li>Allow the drill bit to cool before removing it.</li>
+                                <li>Clean the tool with a dry cloth.</li>
+                                <li>Store it in a dry, ventilated place, protected from moisture.</li>
+                            </ul>
+
+                            <h3>11. Basic maintenance and care</h3>
+                            <ul>
+                                <li>Clean the chuck regularly.</li>
+                                <li>Do not use worn or damaged accessories.</li>
+                                <li>Recharge the battery only with the original charger.</li>
+                                <li>Avoid drops or strong impacts.</li>
+                                <li>If any malfunction is detected, seek authorized technical service.</li>
+                            </ul>
+                            <p>Preventive maintenance reduces costs and increases durability.</p>
+
+                            <h3>12. Final recommendations</h3>
+                            <p>Using the drill/driver correctly not only delivers better results but also ensures
+                                operator safety and protects the equipment. Always respect the tool’s limits and use it
+                                only for its intended purpose.</p>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -412,7 +412,8 @@ body {
 }
 
 /* DASHBOARD LAYOUT */
-#dashboard-view {
+#dashboard-view,
+#other-tools-view {
     display: flex;
     height: 100vh;
 }
@@ -960,7 +961,8 @@ body {
         gap: 2rem;
     }
 
-    #dashboard-view {
+    #dashboard-view,
+    #other-tools-view {
         flex-direction: column;
         height: 100dvh;
         /* Use dynamic viewport height */
