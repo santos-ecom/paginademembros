@@ -1179,7 +1179,8 @@ body {
     width: 100%;
 }
 
-#other-tools-view .grid-container {
+/* Only force grid display if it's NOT hidden */
+#other-tools-view .grid-container:not(.hidden) {
     display: grid !important;
     opacity: 1 !important;
     visibility: visible !important;
