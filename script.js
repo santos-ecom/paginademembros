@@ -127,8 +127,13 @@ window.openImpactWrenchModule = function (event) {
 
 window.openOtherToolsModule = function (event) {
     if (event) event.stopPropagation();
-    console.log("Opening Other Tools Module");
-    resetSubmodules(); // Ensure clean state (grid visible, details hidden)
+    console.log("Opening Other Tools Module - v5.8"); // Version Log
+    resetSubmodules();
+
+    // Explicitly unhide the tools grid to be 100% sure
+    const toolsGrid = document.querySelector('#other-tools-view .grid-container');
+    if (toolsGrid) toolsGrid.classList.remove('hidden');
+
     navigateToView('other-tools-view');
 }
 
