@@ -149,7 +149,7 @@ body {
         /* Start from top to prevent cutting off top content */
         padding-top: 4rem;
         /* Add top space */
-        padding-bottom: 6rem;
+        padding-bottom: 200px;
     }
 }
 
