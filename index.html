@@ -985,7 +985,7 @@
                         <p>Complete User Manual & Instructions</p>
                     </div>
                     <!-- Tool 2 -->
-                    <div class="card glass-panel clickable-card" onclick="selectTool('Rotary Hammer')">
+                    <div class="card glass-panel clickable-card" onclick="openRotaryHammerManual()">
                         <i data-lucide="hammer" class="success-icon" style="color: var(--accent-color);"></i>
                         <h3>Rotary Hammer</h3>
                         <p>Heavy-duty drilling in concrete</p>
@@ -1183,7 +1183,160 @@
                         </div>
                     </div>
                 </div>
-            </div>
+
+                <!-- ROTARY HAMMER MANUAL VIEW -->
+                <div id="rotary-hammer-view" class="hidden">
+                    <button id="back-from-rotary-hammer" class="btn-secondary">
+                        <i data-lucide="arrow-left"></i> Back to Tools
+                    </button>
+
+                    <div class="video-container-full glass-panel">
+                        <h2>Complete User Manual – Rotary Hammer</h2>
+                        <div class="instruction-text">
+                            <p>The rotary hammer is a high-performance power tool designed for drilling into concrete,
+                                masonry, stone, and other high-resistance materials, as well as for chiseling and light
+                                demolition tasks. Unlike a standard drill, a rotary hammer combines rotation with a
+                                pneumatic hammering mechanism, delivering superior efficiency with less effort from the
+                                operator.</p>
+
+                            <p>Proper use ensures safety, accuracy, higher productivity, and extended tool lifespan.</p>
+
+                            <button class="btn-watch" data-video-src="https://www.youtube.com/embed/8mjwLUgR1e8">
+                                <i data-lucide="play-circle"></i> Watch Video
+                            </button>
+
+                            <div class="warning-box"
+                                style="margin: 1.5rem 0; padding: 1rem; border-left: 4px solid var(--accent-color); background: rgba(255, 215, 0, 0.1);">
+                                <strong>Important:</strong> Read all instructions carefully before operating the tool.
+                            </div>
+
+                            <h3>1. Understanding the main components</h3>
+                            <p>Before using the rotary hammer, become familiar with its main components:</p>
+                            <ul>
+                                <li>SDS Plus or SDS Max chuck</li>
+                                <li>Mode selector (drilling, hammer drilling, chiseling)</li>
+                                <li>Variable-speed trigger</li>
+                                <li>Main handle</li>
+                                <li>Adjustable auxiliary handle</li>
+                                <li>Depth stop rod</li>
+                                <li>Lock-on button (on some models)</li>
+                                <li>Motor ventilation system</li>
+                                <li>Power cord or battery</li>
+                            </ul>
+                            <p>Knowing these components helps ensure correct setup and prevents improper use.</p>
+
+                            <h3>2. Preparation before use</h3>
+                            <p>Before powering on the tool:</p>
+                            <ul>
+                                <li>Ensure the tool is unplugged or the battery is removed.</li>
+                                <li>Check that the power cord or battery is in good condition.</li>
+                                <li>Install and adjust the auxiliary handle for better control.</li>
+                                <li>Select the correct drill bit or chisel for the task.</li>
+                                <li>Insert the accessory into the SDS chuck until it locks securely.</li>
+                                <li>Set the depth stop if required.</li>
+                                <li>Select the appropriate operating mode before turning the tool on.</li>
+                            </ul>
+                            <p>Never make adjustments while the tool is powered.</p>
+
+                            <h3>3. Choosing the correct drill bits and chisels</h3>
+                            <p>Using the correct accessory is essential for safety and performance:</p>
+                            <ul>
+                                <li><strong>SDS masonry drill bits:</strong> for concrete, brick, and stone</li>
+                                <li><strong>Pointed chisels:</strong> for localized demolition</li>
+                                <li><strong>Flat chisels:</strong> for removing plaster, tiles, and surface concrete
+                                </li>
+                            </ul>
+                            <p>Never use standard drill bits in a rotary hammer.</p>
+
+                            <h3>4. Selecting operating modes</h3>
+                            <p>Most rotary hammers offer three main operating modes:</p>
+                            <ul>
+                                <li><strong>Drilling without hammering:</strong> for wood or metal (with proper adapter)
+                                </li>
+                                <li><strong>Hammer drilling:</strong> for concrete, masonry, and stone</li>
+                                <li><strong>Chiseling:</strong> for tile removal and light demolition</li>
+                            </ul>
+                            <p>Always select the correct mode before pulling the trigger.</p>
+
+                            <h3>5. How to use hammer drilling mode</h3>
+                            <ul>
+                                <li>Mark the drilling location.</li>
+                                <li>Position the drill bit perpendicular to the surface.</li>
+                                <li>Hold the tool firmly with both hands.</li>
+                                <li>Start drilling at low speed.</li>
+                                <li>Apply steady, moderate pressure without forcing the tool.</li>
+                                <li>Let the pneumatic hammering mechanism do the work.</li>
+                            </ul>
+                            <p>Excessive pressure reduces efficiency and may damage the tool.</p>
+
+                            <h3>6. How to use chiseling mode</h3>
+                            <ul>
+                                <li>Install the appropriate chisel.</li>
+                                <li>Adjust the chisel angle if the tool allows.</li>
+                                <li>Position the tool at the desired location.</li>
+                                <li>Activate the trigger in a controlled manner.</li>
+                                <li>Work in short intervals to avoid fatigue and overheating.</li>
+                            </ul>
+                            <p>This mode is ideal for removing tiles, plaster, and surface concrete.</p>
+
+                            <h3>7. Proper posture and tool control</h3>
+                            <ul>
+                                <li>Always use both hands.</li>
+                                <li>Keep your feet firmly planted and well balanced.</li>
+                                <li>Avoid extended overhead work.</li>
+                                <li>Never apply lateral force to the tool.</li>
+                                <li>Maintain a safe distance from other people.</li>
+                            </ul>
+                            <p>Proper posture improves control and reduces the risk of accidents.</p>
+
+                            <h3>8. Safety precautions during use</h3>
+                            <ul>
+                                <li>Always wear safety glasses.</li>
+                                <li>Use hearing protection due to high noise levels.</li>
+                                <li>Wear anti-vibration gloves when possible.</li>
+                                <li>Use a dust mask in enclosed or dusty environments.</li>
+                                <li>Never operate the tool in wet conditions.</li>
+                                <li>Avoid contact with hidden electrical wiring or plumbing.</li>
+                            </ul>
+                            <p>Safety must always be the top priority.</p>
+
+                            <h3>9. Continuous use and motor care</h3>
+                            <ul>
+                                <li>Take regular breaks during prolonged operation.</li>
+                                <li>Keep ventilation openings clear at all times.</li>
+                                <li>Stop using the tool immediately if unusual noise or vibration occurs.</li>
+                                <li>If the tool overheats, turn it off and allow it to cool down.</li>
+                            </ul>
+                            <p>These precautions protect the motor and hammer mechanism.</p>
+
+                            <h3>10. Procedures after use</h3>
+                            <ul>
+                                <li>Disconnect the tool from the power source or remove the battery.</li>
+                                <li>Allow the accessory to cool before removal.</li>
+                                <li>Clean the tool using a dry cloth.</li>
+                                <li>Remove accumulated dust from the chuck.</li>
+                                <li>Store the tool in a dry, protected location.</li>
+                            </ul>
+
+                            <h3>11. Basic maintenance and care</h3>
+                            <ul>
+                                <li>Lubricate the SDS shank as recommended by the manufacturer.</li>
+                                <li>Do not use damaged or worn accessories.</li>
+                                <li>Periodically inspect the power cord or battery.</li>
+                                <li>Never disassemble the tool yourself.</li>
+                                <li>Seek authorized service when necessary.</li>
+                            </ul>
+                            <p>Preventive maintenance increases durability and reduces repair costs.</p>
+
+                            <h3>12. Final recommendations</h3>
+                            <p>The rotary hammer is a powerful tool intended for heavy-duty applications. Proper
+                                operation ensures maximum efficiency, reduced physical effort, and operator safety.
+                                Always use the correct mode, accessories, and follow recommended operating practices.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
         </main>
     </section>
 

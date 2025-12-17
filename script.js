@@ -493,3 +493,25 @@ if (backFromDrillDriverBtn) {
         if (otherToolsGrid) otherToolsGrid.classList.remove('hidden');
     });
 }
+
+// --- Rotary Hammer Manual Navigation ---
+const rotaryHammerView = document.getElementById('rotary-hammer-view');
+const backFromRotaryHammerBtn = document.getElementById('back-from-rotary-hammer');
+
+window.openRotaryHammerManual = function () {
+    console.log("Opening Rotary Hammer Manual");
+    if (otherToolsGrid) otherToolsGrid.classList.add('hidden');
+    if (rotaryHammerView) {
+        rotaryHammerView.classList.remove('hidden');
+        // Scroll to top of main content
+        const mainContent = document.querySelector('#other-tools-view .main-content');
+        if (mainContent) mainContent.scrollTop = 0;
+    }
+}
+
+if (backFromRotaryHammerBtn) {
+    backFromRotaryHammerBtn.addEventListener('click', () => {
+        if (rotaryHammerView) rotaryHammerView.classList.add('hidden');
+        if (otherToolsGrid) otherToolsGrid.classList.remove('hidden');
+    });
+}
