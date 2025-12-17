@@ -559,3 +559,25 @@ if (backFromJigsawBtn) {
         if (otherToolsGrid) otherToolsGrid.classList.remove('hidden');
     });
 }
+
+// --- Angle Grinder Manual Navigation ---
+const angleGrinderView = document.getElementById('angle-grinder-view');
+const backFromAngleGrinderBtn = document.getElementById('back-from-angle-grinder');
+
+window.openAngleGrinderManual = function () {
+    console.log("Opening Angle Grinder Manual");
+    if (otherToolsGrid) otherToolsGrid.classList.add('hidden');
+    if (angleGrinderView) {
+        angleGrinderView.classList.remove('hidden');
+        // Scroll to top of main content
+        const mainContent = document.querySelector('#other-tools-view .main-content');
+        if (mainContent) mainContent.scrollTop = 0;
+    }
+}
+
+if (backFromAngleGrinderBtn) {
+    backFromAngleGrinderBtn.addEventListener('click', () => {
+        if (angleGrinderView) angleGrinderView.classList.add('hidden');
+        if (otherToolsGrid) otherToolsGrid.classList.remove('hidden');
+    });
+}
