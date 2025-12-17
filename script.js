@@ -128,6 +128,7 @@ window.openImpactWrenchModule = function (event) {
 window.openOtherToolsModule = function (event) {
     if (event) event.stopPropagation();
     console.log("Opening Other Tools Module");
+    resetSubmodules(); // Ensure clean state (grid visible, details hidden)
     navigateToView('other-tools-view');
 }
 
@@ -187,25 +188,23 @@ window.backToModules = function () {
     }
 }
 
-const allDetailViews = document.querySelectorAll('.main-content [id$="-view"]');
-const allListContainers = [
-    document.querySelector('.hero-card'),
-    document.querySelector('.grid-container'),
-    document.querySelector('#other-tools-view .grid-container'), // Ensure this is selected
-    document.getElementById('best-practices-list'),
-    document.getElementById('maintenance-grid')
-];
-
 function resetSubmodules() {
+    // Query elements dynamically to ensure they exist
+    const allDetailViews = document.querySelectorAll('.main-content [id$="-view"]');
+    const allListContainers = [
+        document.querySelector('.hero-card'),
+        document.querySelector('.grid-container'), // Dashboard grid
+        document.querySelector('#other-tools-view .grid-container'), // Tools grid
+        document.getElementById('best-practices-list'),
+        document.getElementById('maintenance-grid')
+    ];
+
     // 1. Close all detailed views
     allDetailViews.forEach(view => {
-        view.classList.add('hidden');
+        if (view) view.classList.add('hidden');
     });
 
-    // 2. Show all main list containers (reset visibility)
-    // Note: We only unhide them. They will still be inside their parent tab.
-    // If the parent tab is hidden, they won't be visible.
-    // If the parent tab is shown, they will be visible (Restoring default state).
+    // 2. Show all main list containers
     allListContainers.forEach(container => {
         if (container) container.classList.remove('hidden');
     });
