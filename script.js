@@ -388,20 +388,57 @@ if (backFromExternalCleaningBtn && maintenanceGrid) {
 }
 
 // --- Generic Video Logic (Direct Redirect) ---
+// --- Generic Video Logic (Modal Embed) ---
 const watchButtons = document.querySelectorAll('.btn-watch');
+const videoModal = document.getElementById('video-modal');
+const modalIframe = document.getElementById('modal-iframe');
+const closeModalBtn = document.getElementById('close-modal');
 
 watchButtons.forEach(btn => {
     btn.addEventListener('click', () => {
         const videoSrc = btn.getAttribute('data-video-src');
-        if (videoSrc) {
-            // Convert embed URL to watch URL for direct viewing
-            // From: https://www.youtube.com/embed/VIDEO_ID
-            // To:   https://www.youtube.com/watch?v=VIDEO_ID
-            const watchUrl = videoSrc.replace('embed/', 'watch?v=');
-            window.open(watchUrl, '_blank');
+        if (videoSrc && videoModal && modalIframe) {
+            // Set the iframe src to the embed URL
+            modalIframe.src = videoSrc;
+            // Show the modal
+            videoModal.classList.add('active');
+            videoModal.style.opacity = '1';
+            videoModal.style.pointerEvents = 'all';
         }
     });
 });
+
+// Close Modal Logic
+if (closeModalBtn && videoModal) {
+    closeModalBtn.addEventListener('click', () => {
+        videoModal.classList.remove('active');
+        videoModal.style.opacity = '0';
+        videoModal.style.pointerEvents = 'none';
+
+        // Stop the video by clearing the src
+        if (modalIframe) {
+            setTimeout(() => {
+                modalIframe.src = "";
+            }, 300); // Wait for fade out
+        }
+    });
+}
+
+// Close on click outside
+if (videoModal) {
+    videoModal.addEventListener('click', (e) => {
+        if (e.target === videoModal) {
+            videoModal.classList.remove('active');
+            videoModal.style.opacity = '0';
+            videoModal.style.pointerEvents = 'none';
+            if (modalIframe) {
+                setTimeout(() => {
+                    modalIframe.src = "";
+                }, 300);
+            }
+        }
+    });
+}
 
 // Storage Navigation
 const storageCard = document.getElementById('storage-card');
