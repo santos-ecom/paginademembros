@@ -1102,8 +1102,8 @@ body {
         padding: 1rem;
         padding-top: calc(160px + env(safe-area-inset-top));
         /* Increased for taller header */
-        padding-bottom: calc(100px + env(safe-area-inset-bottom));
-        /* Increased bottom padding */
+        padding-bottom: calc(180px + env(safe-area-inset-bottom));
+        /* Further increased bottom padding */
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
     }
