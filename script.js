@@ -99,6 +99,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const modulesView = document.getElementById('modules-view');
     const dashboardView = document.getElementById('dashboard-view');
 
+    // Initialize Lucide Icons
+    if (window.lucide) {
+        lucide.createIcons();
+    }
+
     // 2. MODULE SELECTION RE-BIND
     // Using global function for robustness (see below)
 
