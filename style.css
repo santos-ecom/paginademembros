@@ -149,7 +149,7 @@ body {
         /* Start from top to prevent cutting off top content */
         padding-top: 4rem;
         /* Add top space */
-        padding-bottom: 2rem;
+        padding-bottom: 6rem;
     }
 }
 
@@ -1102,8 +1102,8 @@ body {
         padding: 1rem;
         padding-top: calc(160px + env(safe-area-inset-top));
         /* Increased for taller header */
-        padding-bottom: calc(20px + env(safe-area-inset-bottom));
-        /* Reduced bottom padding */
+        padding-bottom: calc(100px + env(safe-area-inset-bottom));
+        /* Increased bottom padding */
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
     }
