@@ -1003,7 +1003,7 @@
                         <p>Curved and intricate cuts</p>
                     </div>
                     <!-- Tool 5 -->
-                    <div class="card glass-panel clickable-card" onclick="selectTool('Angle Grinder')">
+                    <div class="card glass-panel clickable-card" onclick="openAngleGrinderManual()">
                         <i data-lucide="circle-dashed" class="success-icon" style="color: var(--accent-color);"></i>
                         <h3>Angle Grinder</h3>
                         <p>Grinding, cutting, and polishing</p>
@@ -1021,13 +1021,13 @@
                         <p>Smooth finishing for wood surfaces</p>
                     </div>
                     <!-- Tool 8 -->
-                    <div class="card glass-panel clickable-card" onclick="selectTool('Reciprocating Saw')">
+                    <div class="card glass-panel clickable-card" onclick="openReciprocatingSawManual()">
                         <i data-lucide="knife" class="success-icon" style="color: var(--accent-color);"></i>
                         <h3>Reciprocating Saw</h3>
                         <p>Rough cutting for demolition</p>
                     </div>
                     <!-- Tool 9 -->
-                    <div class="card glass-panel clickable-card" onclick="selectTool('Electric Planer')">
+                    <div class="card glass-panel clickable-card" onclick="openElectricPlanerManual()">
                         <i data-lucide="layers" class="success-icon" style="color: var(--accent-color);"></i>
                         <h3>Electric Planer</h3>
                         <p>Smoothing wood surfaces and edges</p>
@@ -2124,6 +2124,325 @@
                                 safety, and long-term equipment durability.</p>
                             <p>Always choose the correct sandpaper, maintain consistent technique, and operate the tool
                                 within its intended limits.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ELECTRIC PLANER MANUAL VIEW -->
+                <div id="electric-planer-view" class="hidden">
+                    <button id="back-from-electric-planer" class="btn-secondary">
+                        <i data-lucide="arrow-left"></i> Back to Tools
+                    </button>
+
+                    <div class="video-container-full glass-panel">
+                        <h2>Complete User Manual – Electric Planer</h2>
+                        <div class="instruction-text">
+                            <p>The electric planer is a power tool designed for smoothing, leveling, thickness
+                                reduction, edge chamfering, and surface finishing of materials such as solid wood, MDF,
+                                plywood, and wooden boards. It removes thin layers of material using high-speed rotating
+                                blades, allowing fast and accurate surface preparation.</p>
+
+                            <p>Proper use ensures precision, safety, clean finishes, and extended tool lifespan.</p>
+
+                            <p>Read all instructions carefully before operating the tool.</p>
+
+                            <button class="btn-watch" data-video-src="https://www.youtube.com/embed/IkMbQawK2jg">
+                                <i data-lucide="play-circle"></i> Watch Video
+                            </button>
+
+                            <h3>1. Understanding the main components</h3>
+                            <p>Before using the electric planer, familiarize yourself with its main components:</p>
+                            <ul>
+                                <li>Planer blades (cutting knives)</li>
+                                <li>Front adjustment knob (cut depth control)</li>
+                                <li>Rear base plate</li>
+                                <li>Front base plate</li>
+                                <li>Chip ejection port</li>
+                                <li>Dust bag or vacuum adapter</li>
+                                <li>Power trigger and safety lock</li>
+                                <li>Ergonomic main handle</li>
+                                <li>Auxiliary front handle</li>
+                                <li>Motor ventilation openings</li>
+                                <li>Power cord or battery</li>
+                            </ul>
+                            <p>Understanding these components is essential for proper adjustments and safe operation.
+                            </p>
+
+                            <h3>2. Preparation before use</h3>
+                            <p>Before turning on the electric planer:</p>
+                            <ul>
+                                <li>Ensure the tool is unplugged or the battery is removed.</li>
+                                <li>Check that the blades are sharp, clean, and securely installed.</li>
+                                <li>Set the desired cutting depth using the front adjustment knob.</li>
+                                <li>Attach the dust bag or connect a vacuum system if available.</li>
+                                <li>Secure the workpiece firmly using clamps or a stable workbench.</li>
+                                <li>Make sure the planing area is free of nails, screws, or foreign objects.</li>
+                            </ul>
+                            <p>Never make adjustments while the tool is powered on.</p>
+
+                            <h3>3. Setting the cutting depth</h3>
+                            <p>The cutting depth determines how much material is removed in each pass:</p>
+                            <ul>
+                                <li><strong>Shallow depth (0.5–1 mm):</strong> finishing and surface leveling</li>
+                                <li><strong>Medium depth (1–2 mm):</strong> general material removal</li>
+                                <li><strong>Deeper cuts:</strong> should be avoided to prevent tear-out and motor strain
+                                </li>
+                            </ul>
+                            <p>Always start with a shallow depth and increase gradually if needed.</p>
+
+                            <h3>4. Proper body position and tool control</h3>
+                            <ul>
+                                <li>Use both hands at all times.</li>
+                                <li>Keep feet firmly planted and well balanced.</li>
+                                <li>Maintain a straight and stable posture.</li>
+                                <li>Keep the planer flat on the surface before starting.</li>
+                            </ul>
+                            <p>Never allow the blades to contact the surface before the motor reaches full speed.</p>
+                            <p>Proper posture ensures better control and smoother results.</p>
+
+                            <h3>5. How to use the electric planer</h3>
+                            <ul>
+                                <li>Place the front base plate flat on the workpiece without engaging the blades.</li>
+                                <li>Turn on the planer and allow it to reach full speed.</li>
+                                <li>Push the planer forward smoothly and steadily.</li>
+                                <li>Apply light pressure at the front at the start of the cut.</li>
+                                <li>Shift pressure gradually to the rear base plate as you move forward.</li>
+                                <li>Do not force the tool. Let the blades remove material naturally.</li>
+                            </ul>
+                            <p>Consistent motion ensures an even and clean surface.</p>
+
+                            <h3>6. Planing edges and chamfering</h3>
+                            <ul>
+                                <li>Use the V-grooves on the base plate for chamfering edges.</li>
+                                <li>Start with a shallow cut.</li>
+                                <li>Keep the planer aligned with the edge.</li>
+                                <li>Maintain steady forward motion.</li>
+                                <li>Avoid excessive pressure on corners to prevent uneven cuts.</li>
+                            </ul>
+                            <p>This technique is ideal for softening sharp edges and preparing joints.</p>
+
+                            <h3>7. Multiple passes and surface finishing</h3>
+                            <ul>
+                                <li>Perform several light passes instead of one deep cut.</li>
+                                <li>Check the surface regularly for flatness.</li>
+                                <li>Change direction if necessary to follow the wood grain.</li>
+                                <li>Finish with a very shallow pass for best results.</li>
+                            </ul>
+                            <p>Multiple light passes provide superior surface quality.</p>
+
+                            <h3>8. Chip control and dust management</h3>
+                            <ul>
+                                <li>Always use the dust bag or vacuum attachment when possible.</li>
+                                <li>Empty the dust bag regularly to prevent clogging.</li>
+                                <li>Keep the chip ejection port clean.</li>
+                                <li>Avoid planing wet or resin-heavy wood that may block airflow.</li>
+                            </ul>
+                            <p>Proper chip management improves visibility and tool efficiency.</p>
+
+                            <h3>9. Safety precautions during use</h3>
+                            <ul>
+                                <li>Always wear safety glasses.</li>
+                                <li>Use a dust mask or respirator when planing.</li>
+                                <li>Wear hearing protection during extended use.</li>
+                                <li>Avoid loose clothing or accessories.</li>
+                                <li>Keep hands away from the blade area.</li>
+                                <li>Never set the planer down until the blades have fully stopped.</li>
+                                <li>Do not operate the tool in wet or damp environments.</li>
+                            </ul>
+                            <p>Safety must always be the top priority.</p>
+
+                            <h3>10. Continuous use and overheating prevention</h3>
+                            <ul>
+                                <li>Take breaks during prolonged operation.</li>
+                                <li>Do not overload the motor with deep cuts.</li>
+                                <li>Keep ventilation openings clear.</li>
+                                <li>If overheating occurs, turn off the tool and allow it to cool.</li>
+                            </ul>
+                            <p>These practices help extend motor life and maintain performance.</p>
+
+                            <h3>11. Procedures after use</h3>
+                            <ul>
+                                <li>Turn off the planer and unplug it or remove the battery.</li>
+                                <li>Allow the blades to stop completely.</li>
+                                <li>Clean the base plates and blade area with a dry cloth.</li>
+                                <li>Empty the dust bag or disconnect the vacuum hose.</li>
+                                <li>Store the tool in a dry, protected location.</li>
+                            </ul>
+
+                            <h3>12. Basic maintenance and care</h3>
+                            <ul>
+                                <li>Inspect blades regularly and replace or sharpen when dull.</li>
+                                <li>Keep base plates clean and smooth.</li>
+                                <li>Tighten screws and blade fasteners periodically.</li>
+                                <li>Use only manufacturer-approved replacement blades.</li>
+                                <li>Seek authorized service if abnormal noise or vibration occurs.</li>
+                            </ul>
+                            <p>Preventive maintenance ensures accuracy and long tool life.</p>
+
+                            <h3>13. Final recommendations</h3>
+                            <p>The electric planer is a powerful and precise woodworking tool when used correctly.
+                                Following these instructions ensures smooth surfaces, professional results, operator
+                                safety, and long-term durability.</p>
+                            <p>Always work with sharp blades, shallow passes, and controlled movements, respecting the
+                                tool’s intended use.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RECIPROCATING SAW MANUAL VIEW -->
+                <div id="reciprocating-saw-view" class="hidden">
+                    <button id="back-from-reciprocating-saw" class="btn-secondary">
+                        <i data-lucide="arrow-left"></i> Back to Tools
+                    </button>
+
+                    <div class="video-container-full glass-panel">
+                        <h2>Complete User Manual – Reciprocating Saw</h2>
+                        <div class="instruction-text">
+                            <p>The reciprocating saw is a powerful and versatile power tool designed for cutting,
+                                demolition, trimming, and remodeling tasks. It is commonly used to cut wood, metal,
+                                plastic, PVC, drywall, tree branches, and construction materials, depending on the blade
+                                installed. Its back-and-forth (reciprocating) blade motion allows fast cutting,
+                                especially in tight spaces and rough applications.</p>
+
+                            <p>Proper use ensures operator safety, efficient cutting, and long tool lifespan.</p>
+
+                            <button class="btn-watch" data-video-src="https://www.youtube.com/embed/8F2Owjt8Qpw">
+                                <i data-lucide="play-circle"></i> Watch Video
+                            </button>
+
+                            <div class="warning-box"
+                                style="margin: 1.5rem 0; padding: 1rem; border-left: 4px solid var(--accent-color); background: rgba(255, 215, 0, 0.1);">
+                                <strong>Important:</strong> Read all instructions carefully before operating the tool.
+                            </div>
+
+                            <h3>1. Understanding the main components</h3>
+                            <p>Before using the reciprocating saw, familiarize yourself with its main components:</p>
+                            <ul>
+                                <li>Reciprocating saw blade</li>
+                                <li>Blade clamp or quick-release blade holder</li>
+                                <li>Adjustable shoe (pivoting foot)</li>
+                                <li>Variable-speed trigger</li>
+                                <li>Safety lock (on some models)</li>
+                                <li>Main handle with grip</li>
+                                <li>Auxiliary front grip (on some models)</li>
+                                <li>Motor ventilation openings</li>
+                                <li>Power cord or battery</li>
+                            </ul>
+                            <p>Understanding these components helps ensure correct setup and safe operation.</p>
+
+                            <h3>2. Preparation before use</h3>
+                            <p>Before turning on the reciprocating saw:</p>
+                            <ul>
+                                <li>Ensure the tool is unplugged or the battery is removed.</li>
+                                <li>Select the correct blade for the material being cut.</li>
+                                <li>Insert the blade fully into the blade holder and ensure it is securely locked.</li>
+                                <li>Adjust the shoe position if the model allows it.</li>
+                                <li>Inspect the work area for hidden electrical wires, pipes, or nails.</li>
+                                <li>Secure the material firmly whenever possible.</li>
+                                <li>Make sure the trigger is not pressed before powering the tool.</li>
+                            </ul>
+                            <p>Never make adjustments while the tool is powered on.</p>
+
+                            <h3>3. Choosing the correct blade</h3>
+                            <p>Using the correct blade is essential for safety and cutting efficiency:</p>
+                            <ul>
+                                <li><strong>Wood blades:</strong> large, widely spaced teeth</li>
+                                <li><strong>Metal blades:</strong> fine, closely spaced teeth</li>
+                                <li><strong>Bi-metal blades:</strong> suitable for wood with nails and mixed materials
+                                </li>
+                                <li><strong>Demolition blades:</strong> heavy-duty cutting tasks</li>
+                                <li><strong>Pruning blades:</strong> tree branches and landscaping</li>
+                            </ul>
+                            <p>Never use dull, bent, or damaged blades.</p>
+
+                            <h3>4. Proper body position and tool control</h3>
+                            <ul>
+                                <li>Always use both hands when operating the saw.</li>
+                                <li>Keep your feet firmly planted and well balanced.</li>
+                                <li>Maintain a stable, controlled stance.</li>
+                                <li>Keep the saw aligned with the cutting path.</li>
+                                <li>Never force the blade sideways during cutting.</li>
+                            </ul>
+                            <p>Good posture improves accuracy and reduces fatigue.</p>
+
+                            <h3>5. How to use the reciprocating saw</h3>
+                            <ul>
+                                <li>Place the adjustable shoe firmly against the workpiece.</li>
+                                <li>Hold the saw securely with both hands.</li>
+                                <li>Pull the trigger gently to start the cut at low speed.</li>
+                                <li>Increase speed gradually as the blade engages the material.</li>
+                                <li>Keep steady forward pressure without forcing the saw.</li>
+                                <li>Allow the blade to do the cutting work.</li>
+                            </ul>
+                            <p>Maintaining contact between the shoe and the material improves control and reduces
+                                vibration.</p>
+
+                            <h3>6. Cutting techniques</h3>
+                            <ul>
+                                <li>Use slow speed to start cuts for better control.</li>
+                                <li>Let the blade reach full stroke before applying pressure.</li>
+                                <li>For metal cutting, use slower speeds and steady pressure.</li>
+                                <li>For wood and demolition, higher speeds are acceptable.</li>
+                                <li>Avoid excessive bending or twisting of the blade.</li>
+                            </ul>
+                            <p>Correct technique increases blade life and cutting efficiency.</p>
+
+                            <h3>7. Plunge cutting (advanced technique)</h3>
+                            <ul>
+                                <li>Use only when appropriate and with proper blades.</li>
+                                <li>Place the shoe edge against the material.</li>
+                                <li>Tilt the saw slightly and start the blade.</li>
+                                <li>Slowly rotate the saw until the blade enters the material.</li>
+                                <li>Proceed with caution and full control.</li>
+                            </ul>
+                            <p>Plunge cutting should only be performed by experienced users.</p>
+
+                            <h3>8. Safety precautions during use</h3>
+                            <ul>
+                                <li>Always wear safety glasses.</li>
+                                <li>Use gloves for better grip and protection.</li>
+                                <li>Wear hearing protection during extended use.</li>
+                                <li>Use a dust mask when cutting dusty materials.</li>
+                                <li>Avoid loose clothing or accessories.</li>
+                                <li>Keep hands away from the blade area at all times.</li>
+                                <li>Do not operate the tool in wet or damp environments.</li>
+                            </ul>
+                            <p>Safety must always be the top priority.</p>
+
+                            <h3>9. Continuous use and overheating prevention</h3>
+                            <ul>
+                                <li>Take breaks during prolonged cutting tasks.</li>
+                                <li>Do not overload the motor.</li>
+                                <li>Keep ventilation openings clear.</li>
+                                <li>If overheating occurs, turn off the tool and allow it to cool.</li>
+                            </ul>
+                            <p>These practices help maintain performance and extend tool life.</p>
+
+                            <h3>10. Procedures after use</h3>
+                            <ul>
+                                <li>Release the trigger and wait for the blade to stop completely.</li>
+                                <li>Unplug the tool or remove the battery.</li>
+                                <li>Allow the blade to cool before removing it.</li>
+                                <li>Clean the saw with a dry cloth.</li>
+                                <li>Store the tool in a dry, protected location.</li>
+                            </ul>
+
+                            <h3>11. Basic maintenance and care</h3>
+                            <ul>
+                                <li>Inspect blades regularly and replace when worn.</li>
+                                <li>Keep the blade clamp clean and free of debris.</li>
+                                <li>Tighten screws and components periodically.</li>
+                                <li>Use only manufacturer-approved accessories.</li>
+                                <li>Seek authorized service if abnormal noise or vibration occurs.</li>
+                            </ul>
+                            <p>Preventive maintenance ensures reliable operation and long-term durability.</p>
+
+                            <h3>12. Final recommendations</h3>
+                            <p>The reciprocating saw is an extremely effective tool for cutting and demolition when used
+                                correctly. Following these instructions ensures fast cuts, improved safety, operator
+                                control, and long equipment life.</p>
+                            <p>Always use the correct blade, maintain firm control, and operate the tool within its
+                                intended limits.</p>
                         </div>
                     </div>
                 </div>

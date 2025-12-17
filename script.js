@@ -625,3 +625,47 @@ if (backFromOrbitalSanderBtn) {
         if (otherToolsGrid) otherToolsGrid.classList.remove('hidden');
     });
 }
+
+// --- Electric Planer Manual Navigation ---
+const electricPlanerView = document.getElementById('electric-planer-view');
+const backFromElectricPlanerBtn = document.getElementById('back-from-electric-planer');
+
+window.openElectricPlanerManual = function () {
+    console.log("Opening Electric Planer Manual");
+    if (otherToolsGrid) otherToolsGrid.classList.add('hidden');
+    if (electricPlanerView) {
+        electricPlanerView.classList.remove('hidden');
+        // Scroll to top of main content
+        const mainContent = document.querySelector('#other-tools-view .main-content');
+        if (mainContent) mainContent.scrollTop = 0;
+    }
+}
+
+if (backFromElectricPlanerBtn) {
+    backFromElectricPlanerBtn.addEventListener('click', () => {
+        if (electricPlanerView) electricPlanerView.classList.add('hidden');
+        if (otherToolsGrid) otherToolsGrid.classList.remove('hidden');
+    });
+}
+
+// --- Reciprocating Saw Manual Navigation ---
+const reciprocatingSawView = document.getElementById('reciprocating-saw-view');
+const backFromReciprocatingSawBtn = document.getElementById('back-from-reciprocating-saw');
+
+window.openReciprocatingSawManual = function () {
+    console.log("Opening Reciprocating Saw Manual");
+    if (otherToolsGrid) otherToolsGrid.classList.add('hidden');
+    if (reciprocatingSawView) {
+        reciprocatingSawView.classList.remove('hidden');
+        // Scroll to top of main content
+        const mainContent = document.querySelector('#other-tools-view .main-content');
+        if (mainContent) mainContent.scrollTop = 0;
+    }
+}
+
+if (backFromReciprocatingSawBtn) {
+    backFromReciprocatingSawBtn.addEventListener('click', () => {
+        if (reciprocatingSawView) reciprocatingSawView.classList.add('hidden');
+        if (otherToolsGrid) otherToolsGrid.classList.remove('hidden');
+    });
+}
