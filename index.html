@@ -1009,7 +1009,7 @@
                         <p>Grinding, cutting, and polishing</p>
                     </div>
                     <!-- Tool 6 -->
-                    <div class="card glass-panel clickable-card" onclick="selectTool('Oscillating Multi-Tool')">
+                    <div class="card glass-panel clickable-card" onclick="openOscillatingMultiToolManual()">
                         <i data-lucide="vibrate" class="success-icon" style="color: var(--accent-color);"></i>
                         <h3>Oscillating Multi-Tool</h3>
                         <p>Sanding, cutting, and scraping</p>
@@ -1806,6 +1806,169 @@
                     </div>
                 </div>
 
+                <!-- OSCILLATING MULTI-TOOL MANUAL VIEW -->
+                <div id="oscillating-multi-tool-view" class="hidden">
+                    <button id="back-from-oscillating-multi-tool" class="btn-secondary">
+                        <i data-lucide="arrow-left"></i> Back to Tools
+                    </button>
+
+                    <div class="video-container-full glass-panel">
+                        <h2>Complete User Manual – Oscillating Multi-Tool</h2>
+                        <div class="instruction-text">
+                            <p>The oscillating multi-tool is an extremely versatile power tool designed for precision
+                                cutting, sanding, scraping, grout removal, and finishing in materials such as wood, MDF,
+                                drywall, plastic, thin metal, ceramic, and masonry, using the appropriate accessory. Its
+                                high-frequency oscillating motion allows work in tight or hard-to-reach areas with
+                                excellent control and safety.</p>
+
+                            <p>Proper use ensures accuracy, operator safety, superior finishing, and extended tool
+                                lifespan.</p>
+
+                            <p>Read all instructions carefully before using the tool.</p>
+
+                            <button class="btn-watch" data-video-src="https://www.youtube.com/embed/6zO4Lqx1nIw">
+                                <i data-lucide="play-circle"></i> Watch Video
+                            </button>
+
+                            <h3>1. Understanding the main components</h3>
+                            <p>Before operating the oscillating multi-tool, familiarize yourself with its main
+                                components:</p>
+                            <ul>
+                                <li>Oscillating tool head</li>
+                                <li>Quick-change accessory system</li>
+                                <li>Cutting blades (straight, semicircular, segmented)</li>
+                                <li>Sanding pad attachment</li>
+                                <li>Sandpaper sheets in various grits</li>
+                                <li>Scrapers and grout-removal accessories</li>
+                                <li>Speed control dial</li>
+                                <li>Power trigger or switch</li>
+                                <li>Ergonomic handle</li>
+                                <li>Motor ventilation openings</li>
+                                <li>Power cord or battery</li>
+                            </ul>
+                            <p>Understanding these components is essential for proper setup and safe operation.</p>
+
+                            <h3>2. Preparation before use</h3>
+                            <p>Before turning on the oscillating multi-tool:</p>
+                            <ul>
+                                <li>Ensure the tool is unplugged or the battery is removed.</li>
+                                <li>Select the appropriate accessory for the task.</li>
+                                <li>Install the accessory securely onto the tool head.</li>
+                                <li>Adjust the accessory angle as needed for the cut or application.</li>
+                                <li>Set the proper speed for the material being worked on.</li>
+                                <li>Secure the workpiece whenever possible.</li>
+                                <li>Make sure the work area is clean and free of obstacles.</li>
+                                <li>Never make adjustments while the tool is powered on.</li>
+                            </ul>
+
+                            <h3>3. Choosing the correct accessory</h3>
+                            <p>Using the correct accessory is critical for safety and performance:</p>
+                            <ul>
+                                <li><strong>Wood and drywall cutting blades</strong></li>
+                                <li><strong>Bi-metal blades for metal and nails</strong></li>
+                                <li><strong>Segmented blades for precise and flush cuts</strong></li>
+                                <li><strong>Rigid or flexible scrapers for adhesive and residue removal</strong></li>
+                                <li><strong>Grout-removal accessories</strong></li>
+                                <li><strong>Sanding pad with appropriate sandpaper grits</strong></li>
+                            </ul>
+                            <p>Never use damaged or incompatible accessories.</p>
+
+                            <h3>4. Speed adjustment</h3>
+                            <ul>
+                                <li><strong>Low speed:</strong> thin metals, plastics, and delicate tasks</li>
+                                <li><strong>Medium speed:</strong> wood, MDF, and drywall</li>
+                                <li><strong>High speed:</strong> fast cutting and aggressive material removal</li>
+                            </ul>
+                            <p>Proper speed selection reduces accessory wear and improves finish quality.</p>
+
+                            <h3>5. How to use for cutting</h3>
+                            <ul>
+                                <li>Mark the cutting line on the material.</li>
+                                <li>Position the accessory at the starting point.</li>
+                                <li>Hold the tool firmly.</li>
+                                <li>Turn on the tool and allow it to reach the selected oscillation speed.</li>
+                                <li>Move the tool forward slowly with full control.</li>
+                                <li>Do not force the tool. Let the accessory do the work.</li>
+                            </ul>
+                            <p>The oscillating multi-tool is ideal for precise, plunge, and flush cuts.</p>
+
+                            <h3>6. How to use for sanding</h3>
+                            <ul>
+                                <li>Install the sanding pad and the appropriate sandpaper.</li>
+                                <li>Use smooth, even movements.</li>
+                                <li>Apply light, consistent pressure.</li>
+                                <li>Replace sandpaper as it becomes worn.</li>
+                            </ul>
+                            <p>This mode is ideal for finishing work, corners, and small surfaces.</p>
+
+                            <h3>7. How to use for scraping and removal</h3>
+                            <ul>
+                                <li>Install the appropriate scraper attachment.</li>
+                                <li>Work at a shallow angle.</li>
+                                <li>Use controlled, steady motions.</li>
+                                <li>Avoid excessive force against the surface.</li>
+                            </ul>
+                            <p>This function is ideal for removing glue, caulk, paint, and old grout.</p>
+
+                            <h3>8. Proper posture and tool control</h3>
+                            <ul>
+                                <li>Use both hands whenever possible.</li>
+                                <li>Keep your feet firmly planted and well balanced.</li>
+                                <li>Maintain a stable, aligned body position.</li>
+                                <li>Avoid uncomfortable positions for extended periods.</li>
+                                <li>Keep hands away from the working area.</li>
+                            </ul>
+                            <p>Proper posture ensures better control and increased safety.</p>
+
+                            <h3>9. Safety precautions during use</h3>
+                            <ul>
+                                <li>Always wear safety glasses.</li>
+                                <li>Use a dust mask when necessary.</li>
+                                <li>Wear hearing protection if required.</li>
+                                <li>Avoid loose clothing or dangling accessories.</li>
+                                <li>Never touch the accessory immediately after use.</li>
+                                <li>Do not operate the tool in wet or damp environments.</li>
+                            </ul>
+                            <p>Safety should always be the top priority.</p>
+
+                            <h3>10. Continuous use and problem prevention</h3>
+                            <ul>
+                                <li>Take breaks during prolonged operation.</li>
+                                <li>Avoid overloading the motor.</li>
+                                <li>If excessive vibration occurs, turn off the tool immediately.</li>
+                                <li>Use only manufacturer-recommended accessories.</li>
+                            </ul>
+                            <p>These practices help prevent motor damage and accessory failure.</p>
+
+                            <h3>11. Procedures after use</h3>
+                            <ul>
+                                <li>Turn off the tool and unplug it or remove the battery.</li>
+                                <li>Allow the accessory to cool before removal.</li>
+                                <li>Clean the tool with a dry cloth.</li>
+                                <li>Remove dust from ventilation openings.</li>
+                                <li>Store the tool in a dry, protected location.</li>
+                            </ul>
+
+                            <h3>12. Basic maintenance and care</h3>
+                            <ul>
+                                <li>Regularly inspect accessories for wear.</li>
+                                <li>Replace worn or damaged accessories.</li>
+                                <li>Clean the accessory mounting system.</li>
+                                <li>Do not use improvised accessories.</li>
+                                <li>Seek authorized service if any malfunction occurs.</li>
+                            </ul>
+                            <p>Preventive maintenance improves performance and extends tool life.</p>
+
+                            <h3>13. Final recommendations</h3>
+                            <p>The oscillating multi-tool is an extremely practical and precise tool when used
+                                correctly. Following these instructions ensures high-quality results, operator safety,
+                                and long-term equipment reliability.</p>
+                            <p>Always use the correct accessory, adjust the speed properly, and maintain full attention
+                                during operation.</p>
+                        </div>
+                    </div>
+                </div>
+
         </main>
     </section>
 
@@ -1822,7 +1985,7 @@
         </div>
     </div>
 
-    <script src="script.js?v=5.9"></script>
+    <script src="script.js?v=5.10"></script>
     <script>
         // Initialize Lucide Icons
         lucide.createIcons();

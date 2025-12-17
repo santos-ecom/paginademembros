@@ -127,7 +127,7 @@ window.openImpactWrenchModule = function (event) {
 
 window.openOtherToolsModule = function (event) {
     if (event) event.stopPropagation();
-    console.log("Opening Other Tools Module - v5.9"); // Version Log
+    console.log("Opening Other Tools Module - v5.10"); // Version Log
     resetSubmodules();
 
     // Explicitly unhide the tools grid to be 100% sure
@@ -578,6 +578,28 @@ window.openAngleGrinderManual = function () {
 if (backFromAngleGrinderBtn) {
     backFromAngleGrinderBtn.addEventListener('click', () => {
         if (angleGrinderView) angleGrinderView.classList.add('hidden');
+        if (otherToolsGrid) otherToolsGrid.classList.remove('hidden');
+    });
+}
+
+// --- Oscillating Multi-Tool Manual Navigation ---
+const oscillatingMultiToolView = document.getElementById('oscillating-multi-tool-view');
+const backFromOscillatingMultiToolBtn = document.getElementById('back-from-oscillating-multi-tool');
+
+window.openOscillatingMultiToolManual = function () {
+    console.log("Opening Oscillating Multi-Tool Manual");
+    if (otherToolsGrid) otherToolsGrid.classList.add('hidden');
+    if (oscillatingMultiToolView) {
+        oscillatingMultiToolView.classList.remove('hidden');
+        // Scroll to top of main content
+        const mainContent = document.querySelector('#other-tools-view .main-content');
+        if (mainContent) mainContent.scrollTop = 0;
+    }
+}
+
+if (backFromOscillatingMultiToolBtn) {
+    backFromOscillatingMultiToolBtn.addEventListener('click', () => {
+        if (oscillatingMultiToolView) oscillatingMultiToolView.classList.add('hidden');
         if (otherToolsGrid) otherToolsGrid.classList.remove('hidden');
     });
 }
