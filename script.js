@@ -389,14 +389,19 @@ if (backFromExternalCleaningBtn && maintenanceGrid) {
 
 // --- Generic Video Logic (Direct Redirect) ---
 // --- Generic Video Logic (Modal Embed) ---
-const watchButtons = document.querySelectorAll('.btn-watch');
-const videoModal = document.getElementById('video-modal');
-const modalIframe = document.getElementById('modal-iframe');
-const closeModalBtn = document.getElementById('close-modal');
+// --- Generic Video Logic (Modal Embed) ---
+// Using Event Delegation for robustness
+document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.btn-watch');
+    if (btn) {
+        e.preventDefault(); // Prevent default button behavior
 
-watchButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
         const videoSrc = btn.getAttribute('data-video-src');
+        const videoModal = document.getElementById('video-modal');
+        const modalIframe = document.getElementById('modal-iframe');
+
+        console.log('Video button clicked:', videoSrc);
+
         if (videoSrc && videoModal && modalIframe) {
             // Set the iframe src to the embed URL
             modalIframe.src = videoSrc;
@@ -404,13 +409,24 @@ watchButtons.forEach(btn => {
             videoModal.classList.add('active');
             videoModal.style.opacity = '1';
             videoModal.style.pointerEvents = 'all';
+        } else {
+            console.error('Video modal reference missing or invalid src');
         }
-    });
+    }
 });
 
-// Close Modal Logic
-if (closeModalBtn && videoModal) {
-    closeModalBtn.addEventListener('click', () => {
+// Close Modal Logic (Delegation)
+document.addEventListener('click', (e) => {
+    const videoModal = document.getElementById('video-modal');
+    if (!videoModal) return;
+
+    // Check if clicked close button OR clicked overlay (backdrop)
+    const isCloseBtn = e.target.closest('#close-modal');
+    const isBackdrop = e.target === videoModal;
+
+    if (isCloseBtn || isBackdrop) {
+        const modalIframe = document.getElementById('modal-iframe');
+
         videoModal.classList.remove('active');
         videoModal.style.opacity = '0';
         videoModal.style.pointerEvents = 'none';
@@ -421,24 +437,8 @@ if (closeModalBtn && videoModal) {
                 modalIframe.src = "";
             }, 300); // Wait for fade out
         }
-    });
-}
-
-// Close on click outside
-if (videoModal) {
-    videoModal.addEventListener('click', (e) => {
-        if (e.target === videoModal) {
-            videoModal.classList.remove('active');
-            videoModal.style.opacity = '0';
-            videoModal.style.pointerEvents = 'none';
-            if (modalIframe) {
-                setTimeout(() => {
-                    modalIframe.src = "";
-                }, 300);
-            }
-        }
-    });
-}
+    }
+});
 
 // Storage Navigation
 const storageCard = document.getElementById('storage-card');

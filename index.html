@@ -550,19 +550,7 @@
                         </div>
                     </div>
 
-                    <!-- GENERIC VIDEO MODAL -->
-                    <div id="video-modal" class="modal-overlay">
-                        <div class="modal-content">
-                            <button id="close-modal" class="close-modal">
-                                <i data-lucide="x"></i>
-                            </button>
-                            <div class="video-responsive" style="margin-top: 0; border: none;">
-                                <iframe id="modal-iframe" width="560" height="315" src=""
-                                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
-                                    frameborder="0"></iframe>
-                            </div>
-                        </div>
-                    </div>
+
 
                 </div>
             </div>
@@ -1195,7 +1183,20 @@
         </main>
     </section>
 
-    <script src="script.js?v=5.6"></script>
+    <!-- GENERIC VIDEO MODAL (Global) -->
+    <div id="video-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button id="close-modal" class="close-modal">
+                <i data-lucide="x"></i>
+            </button>
+            <div class="video-responsive" style="margin-top: 0; border: none;">
+                <iframe id="modal-iframe" width="560" height="315" src=""
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js?v=5.7"></script>
     <script>
         // Initialize Lucide Icons
         lucide.createIcons();
