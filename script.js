@@ -515,3 +515,25 @@ if (backFromRotaryHammerBtn) {
         if (otherToolsGrid) otherToolsGrid.classList.remove('hidden');
     });
 }
+
+// --- Circular Saw Manual Navigation ---
+const circularSawView = document.getElementById('circular-saw-view');
+const backFromCircularSawBtn = document.getElementById('back-from-circular-saw');
+
+window.openCircularSawManual = function () {
+    console.log("Opening Circular Saw Manual");
+    if (otherToolsGrid) otherToolsGrid.classList.add('hidden');
+    if (circularSawView) {
+        circularSawView.classList.remove('hidden');
+        // Scroll to top of main content
+        const mainContent = document.querySelector('#other-tools-view .main-content');
+        if (mainContent) mainContent.scrollTop = 0;
+    }
+}
+
+if (backFromCircularSawBtn) {
+    backFromCircularSawBtn.addEventListener('click', () => {
+        if (circularSawView) circularSawView.classList.add('hidden');
+        if (otherToolsGrid) otherToolsGrid.classList.remove('hidden');
+    });
+}
