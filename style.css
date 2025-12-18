@@ -149,7 +149,7 @@ body {
         /* Start from top to prevent cutting off top content */
         padding-top: 4rem;
         /* Add top space */
-        padding-bottom: 200px;
+        padding-bottom: 4rem;
     }
 }
 
@@ -1128,6 +1128,7 @@ body {
         grid-template-columns: 1fr;
         /* Single column for cards */
         gap: 1rem;
+        padding-bottom: 6rem;
     }
 
     .list-card {

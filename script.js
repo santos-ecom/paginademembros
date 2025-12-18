@@ -12,6 +12,24 @@ const modulesLogoutBtn = document.getElementById('modules-logout-btn');
 const moduleImpactWrench = document.getElementById('module-impact-wrench');
 const moduleOtherTools = document.getElementById('module-other-tools');
 
+// --- Session Management ---
+const SESSION_KEY = 'espazie_session';
+
+function saveSession(data) {
+    const currentSession = loadSession() || {};
+    const newSession = { ...currentSession, ...data };
+    localStorage.setItem(SESSION_KEY, JSON.stringify(newSession));
+}
+
+function loadSession() {
+    const session = localStorage.getItem(SESSION_KEY);
+    return session ? JSON.parse(session) : null;
+}
+
+function clearSession() {
+    localStorage.removeItem(SESSION_KEY);
+}
+
 // --- Authentication & Navigation Logic ---
 
 // 1. LOGIN
@@ -24,6 +42,9 @@ loginForm.addEventListener('submit', (e) => {
 });
 
 function performLogin() {
+    // Save Session
+    saveSession({ isLoggedIn: true, view: 'modules-view' });
+
     // Hide Login
     loginView.style.opacity = '0';
 
@@ -32,25 +53,31 @@ function performLogin() {
         loginView.classList.add('hidden');
 
         // Show Module Selection instead of Dashboard directly
-        modulesView.classList.remove('hidden');
-        void modulesView.offsetWidth; // trigger reflow
-        modulesView.classList.add('active'); // CRTICAL: Enable pointer events
-        modulesView.style.opacity = '1';
+        if (modulesView) {
+            modulesView.classList.remove('hidden');
+            void modulesView.offsetWidth; // trigger reflow
+            modulesView.classList.add('active'); // CRTICAL: Enable pointer events
+            modulesView.style.opacity = '1';
+        }
     }, 500);
 }
 
-// 3. LOGOUT - GLOBAL FUNCTION
+// 2. LOGOUT - GLOBAL FUNCTION
 window.performLogout = function () {
     console.log("Global Logout Triggered");
+    clearSession();
 
     // Determine which view is active to hide it
     const dashboardView = document.getElementById('dashboard-view');
     const modulesView = document.getElementById('modules-view');
+    const otherToolsView = document.getElementById('other-tools-view');
     const loginView = document.getElementById('login-view');
     const loginForm = document.getElementById('login-form');
 
-    const activeView = (dashboardView && dashboardView.classList.contains('active')) ? dashboardView :
-        ((modulesView && !modulesView.classList.contains('hidden')) ? modulesView : null);
+    let activeView = null;
+    if (dashboardView && dashboardView.classList.contains('active')) activeView = dashboardView;
+    else if (modulesView && !modulesView.classList.contains('hidden')) activeView = modulesView;
+    else if (otherToolsView && otherToolsView.classList.contains('active')) activeView = otherToolsView;
 
     if (activeView) {
         activeView.classList.remove('active');
@@ -69,6 +96,11 @@ window.performLogout = function () {
             modulesView.classList.add('hidden');
             modulesView.style.opacity = '0';
         }
+        if (otherToolsView) {
+            otherToolsView.classList.add('hidden');
+            otherToolsView.classList.remove('active');
+            otherToolsView.style.opacity = '0';
+        }
 
         // Show Login
         if (loginView) {
@@ -82,6 +114,73 @@ window.performLogout = function () {
         if (loginForm) loginForm.reset();
     }, 500);
 }
+
+// 3. INITIALIZATION (Check Session)
+document.addEventListener('DOMContentLoaded', () => {
+    // Re-select elements inside ensure they exist
+    const modulesView = document.getElementById('modules-view');
+    const dashboardView = document.getElementById('dashboard-view');
+    const loginView = document.getElementById('login-view');
+    const otherToolsView = document.getElementById('other-tools-view');
+
+    // Initialize Lucide Icons
+    if (window.lucide) {
+        lucide.createIcons();
+    }
+
+    // Check for saved session
+    const session = loadSession();
+    if (session && session.isLoggedIn) {
+        console.log("Restoring session:", session);
+
+        // Hide Login Immediately
+        if (loginView) {
+            loginView.classList.add('hidden');
+            loginView.classList.remove('active');
+            loginView.style.opacity = '0';
+        }
+
+        // Restore View
+        if (session.view === 'dashboard-view') {
+            if (dashboardView) {
+                dashboardView.classList.remove('hidden');
+                dashboardView.classList.add('active');
+                dashboardView.style.opacity = '1';
+
+                // Restore Tab if exists
+                if (session.tab && typeof switchTab === 'function') {
+                    switchTab(session.tab);
+                } else if (typeof switchTab === 'function') {
+                    switchTab('how-to-use'); // Default
+                }
+            }
+        } else if (session.view === 'other-tools-view') {
+            if (otherToolsView) {
+                otherToolsView.classList.remove('hidden');
+                otherToolsView.classList.add('active');
+                otherToolsView.style.opacity = '1';
+                // Explicitly unhide grid if generic restore
+                const grid = otherToolsView.querySelector('.grid-container');
+                if (grid) grid.classList.remove('hidden');
+            }
+        } else {
+            // Default to Modules View
+            if (modulesView) {
+                modulesView.classList.remove('hidden');
+                modulesView.classList.add('active');
+                modulesView.style.opacity = '1';
+            }
+        }
+    } else {
+        // No session, ensure login is visible
+        if (loginView) {
+            loginView.classList.remove('hidden');
+            loginView.classList.add('active');
+            loginView.style.opacity = '1';
+        }
+    }
+});
+
 
 // Bind Logout Buttons (Legacy listener + ensure global access)
 const mobileLogoutBtn = document.getElementById('mobile-logout-btn');
@@ -169,7 +268,11 @@ function navigateToView(viewId) {
 
     // Special handling for dashboard tabs
     if (viewId === 'dashboard-view' && typeof switchTab === 'function') {
-        switchTab('how-to-use');
+        // Don't override tab if we are just navigating to dashboard
+        // But do save the view
+        saveSession({ view: viewId });
+    } else {
+        saveSession({ view: viewId });
     }
 }
 
@@ -178,24 +281,35 @@ window.backToModules = function () {
     console.log("Back to Modules Triggered");
 
     const dashboardView = document.getElementById('dashboard-view');
+    const otherToolsView = document.getElementById('other-tools-view');
     const modulesView = document.getElementById('modules-view');
 
-    if (dashboardView) {
-        dashboardView.style.opacity = '0';
-        dashboardView.classList.remove('active');
+    // Helper to hide a view
+    const hideView = (view) => {
+        if (view && view.classList.contains('active')) {
+            view.style.opacity = '0';
+            view.classList.remove('active');
+            setTimeout(() => {
+                view.classList.add('hidden');
+            }, 500);
+        }
+    };
 
-        setTimeout(() => {
-            dashboardView.classList.add('hidden');
+    hideView(dashboardView);
+    hideView(otherToolsView);
 
-            if (modulesView) {
-                modulesView.classList.remove('hidden');
-                void modulesView.offsetWidth; // reflow
-                modulesView.classList.add('active');
-                // CRITICAL: Ensure opacity is 1
-                modulesView.style.opacity = '1';
-            }
-        }, 500);
-    }
+    // Show Modules View
+    setTimeout(() => {
+        if (modulesView) {
+            modulesView.classList.remove('hidden');
+            void modulesView.offsetWidth; // reflow
+            modulesView.classList.add('active');
+            modulesView.style.opacity = '1';
+
+            // Save Session State
+            saveSession({ view: 'modules-view', tab: null });
+        }
+    }, 500);
 }
 
 function resetSubmodules() {
@@ -230,6 +344,9 @@ function switchTab(tabId) {
             item.classList.remove('active');
         }
     });
+
+    // Save Tab State
+    saveSession({ tab: tabId });
 
     // 2. Update Content Area
     tabContents.forEach(content => {
